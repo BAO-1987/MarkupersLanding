@@ -1,0 +1,50 @@
+@use '../utils/functions/' as *;
+@use '../utils/mixins' as *;
+
+.theme-switch {
+  @include flex-all-center;
+
+  min-height: 20px;
+
+  &__label {
+    position: relative;
+    cursor: pointer;
+  }
+
+  &__input {
+    @include flex-all-center;
+
+    appearance: none;
+    position: relative;
+    outline: none;
+    border-radius: 30px;
+    width: 90px;
+    min-height: 50px;
+    border-radius: 100px;
+    background-color: var(--color-ebony);
+    transition: background-color 0.3s linear;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 5px;
+      width: 40px;
+      height: 40px;
+      // background-image: url("../img/sprite.svg#dark-theme");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      transition: background-image 0.3s linear;
+    }
+
+    &:checked::before {
+      content: "";
+      left: 5px;
+      // background-image: url("../img/sprite.svg#light-theme");
+    }
+    &:checked {
+      background-color: var(--color-silver);
+    }
+  }
+}

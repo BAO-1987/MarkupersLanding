@@ -1,0 +1,79 @@
+@use '../utils/functions/' as *;
+@use '../utils/mixins' as *;
+
+.page {
+  min-height: 100vh;
+  font-family: var(--font-family-primary);
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  font-size: 1rem;
+  line-height: 1.65;
+  letter-spacing: 0.03em;
+  color: var(--color-white);
+  background-color: var(--color-black);
+  font-weight: var(--fw-500);
+  line-height: 1.65;
+  letter-spacing: 0.03em;
+
+  &__body {
+    position: relative;
+    min-width: rem(320);
+    min-height: var(--vh);
+
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: 10;
+      width: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      transition: width 0.4s linear;
+      inset: 0;
+    }
+  }
+
+  &.open {
+    overflow: hidden;
+
+    > .page__body::before {
+      width: 100%;
+    }
+  }
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 var(--container-offset);
+  width: 100%;
+  max-width: var(--container-width);
+
+  &--wrapper {
+    --container-width: 720px;
+  }
+}
+
+.site-container {
+  @include footerToBottom;
+}
+
+.section {
+  margin-bottom: clamp(1.875rem, calc(1rem + vw(124)), 9.8rem);
+}
+
+.logo {
+  @include flex-all-center;
+
+  &__img {
+    width: rem(181);
+    min-height: rem(21);
+    object-fit: contain;
+  }
+}
+
+.grid {
+  display: grid;
+  align-items: center;
+  grid-template-areas: 'hero';
+
+  > * {
+    grid-area: hero;
+  }
+}

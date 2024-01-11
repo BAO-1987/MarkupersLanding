@@ -1,0 +1,17 @@
+@mixin cover-bg {
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+@mixin mask {
+  content: "";
+  position: absolute;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  background-color: currentcolor;
+  transition: background-color 0.3s linear;
+}
+
+

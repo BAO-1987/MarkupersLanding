@@ -1,0 +1,8 @@
+@mixin cutText($overflow: ellipsis) {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: $overflow;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+}

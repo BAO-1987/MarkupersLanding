@@ -1,0 +1,21 @@
+     <dialog class="search">
+       <form class="form form--search" action="#">
+
+         <div class="form__wrapper">
+           <label class="sr-only" for="search"><span>форма пошуку на сайті</span></label>
+           <input class="form__input" type="search" id="search" placeholder="Пошук" required>
+
+           <button class="form__search" type="submit" formmethod="dialog" aria-label="кнопка пошуку">
+             <svg class="icons" arial-hidden="true">
+               <use xlink:href="./icons/search.svg"></use>
+             </svg>
+           </button>
+         </div>
+
+         <button class="form__close" type="button" data-modal-close aria-label="кнопка закриття пошуку">
+           <svg class="icons icons--close" arial-hidden="true">
+             <use xlink:href="./icons/close.svg"></use>
+           </svg>
+         </button>
+       </form>
+     </dialog>
