@@ -2,11 +2,8 @@
 @use '../utils/mixins' as *;
 
 .nav {
-  @include flex-all-sb;
-
   &__list {
     @include flex-v-center;
-    margin: 0 auto;
   }
 
   &__item {

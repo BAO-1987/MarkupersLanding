@@ -1,0 +1,40 @@
+@use '../../utils/functions' as *;
+@use '../../utils/mixins' as *;
+
+.hero {
+  @include flex-all-sb;
+  gap: 1rem;
+
+  &__content {
+    display: grid;
+    grid-template-areas: 'hero';
+    width: 100%;
+
+    > * {
+      grid-area: hero;
+    }
+  }
+
+  &__desc {
+    width: 100%;
+    max-width: rem(910);
+    z-index: 1;
+    justify-self: center;
+  }
+
+  &__image {
+    justify-self: end;
+
+    img {
+      width: rem(595);
+      min-height: rem(418);
+    }
+  }
+
+  &__title {
+    margin-bottom: clamp(2rem, vw(100), 6.25rem);
+    font-weight: var(--fw-900);
+    font-size: clamp(2.1875rem, calc(0.75rem + 7.1875vw), 9.375rem);
+    line-height: 1.2;
+  }
+}

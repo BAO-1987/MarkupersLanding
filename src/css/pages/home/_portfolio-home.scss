@@ -1,0 +1,119 @@
+@use '../../utils/functions' as *;
+@use '../../utils/mixins' as *;
+
+.portfolio-home {
+  &__inner {
+    @include flex-all-sb;
+  }
+
+  &__content {
+    margin-bottom: rem(50);
+  }
+
+  &__text {
+    margin-bottom: 0;
+  }
+
+  &__nav {
+    @include flex;
+    align-items: flex-end;
+    gap: rem(30);
+  }
+}
+
+.portfolio-slider {
+  overflow: hidden;
+
+  &__item {
+    @include flex-all-sb;
+    gap: 1rem;
+  }
+
+  &__image {
+    img {
+      max-width: rem(930);
+      min-height: rem(465);
+    }
+  }
+}
+
+.portfolio-desc {
+  width: 100%;
+  max-width: rem(430);
+
+   h3 {
+      margin-bottom: rem(30);
+    }
+
+  &__list {
+    @include flex;
+    margin-bottom: rem(30);
+    flex-direction: column;
+    gap: rem(20);
+  }
+
+  &__item {
+    @include flex-v-center;
+
+    position: relative;
+    padding-left: rem(25);
+    font-weight: var(--fw-700);
+    font-size: rem(18);
+    line-height: 1.65;
+
+    &::before {
+      content: '';
+      position: absolute;
+      border-radius: var(--radius-round);
+      left: 0;
+      width: 10px;
+      height: 10px;
+      background-color: currentcolor;
+    }
+
+    dt {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      position: relative;
+      overflow: hidden;
+      flex: 0 1 100%;
+
+      &::after {
+        content: '';
+        position: relative;
+        margin: 0 rem(30);
+
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url('../images/icons/line.svg');
+        height: 6px;
+        width: 100%;
+      }
+
+      // &::before {
+      //   content: '';
+      //   position: absolute;
+      //   width: 5px;
+      //   height: 5px;
+      //   border-radius: 50%;
+      //   background-color: yellow;
+      //   right: 0;
+      // }
+    }
+
+    // dd {
+    //   margin: 0;
+    //   padding-left: 30px;
+    // }
+  }
+
+  &__category {
+    display: block;
+    margin-bottom: rem(50);
+    color: var(--color-gray);
+    font-size: rem(15);
+    line-height: 1.5;
+  }
+}

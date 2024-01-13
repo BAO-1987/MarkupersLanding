@@ -1,0 +1,15 @@
+@use '../../utils/functions' as *;
+@use '../../utils/mixins' as *;
+
+.services-home {
+  &__text {
+    width: 100%;
+    max-width: rem(650);
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(335px, 1fr));
+    gap: rem(30);
+  }
+}

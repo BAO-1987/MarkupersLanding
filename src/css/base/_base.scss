@@ -5,14 +5,12 @@
   min-height: 100vh;
   font-family: var(--font-family-primary);
   font-feature-settings: 'pnum' on, 'lnum' on;
+  font-variant-numeric: lining-nums proportional-nums;
   font-size: 1rem;
   line-height: 1.65;
   letter-spacing: 0.03em;
   color: var(--color-white);
   background-color: var(--color-black);
-  font-weight: var(--fw-500);
-  line-height: 1.65;
-  letter-spacing: 0.03em;
 
   &__body {
     position: relative;
@@ -55,7 +53,7 @@
 }
 
 .section {
-  margin-bottom: clamp(1.875rem, calc(1rem + vw(124)), 9.8rem);
+  margin-bottom: clamp(1.875rem, calc(1rem + vw(134)), 9.8rem);
 }
 
 .logo {
@@ -68,12 +66,29 @@
   }
 }
 
-.grid {
-  display: grid;
-  align-items: center;
-  grid-template-areas: 'hero';
+.main {
+  padding-top: calc(var(--header-height) + 60px);
+}
 
-  > * {
-    grid-area: hero;
+.link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-orange);
+  gap: 1rem;
+
+  &::after {
+    @include mask;
+    position: relative;
+    mask-image: url('../images/icons/arrow.svg');
+    width: 1rem;
+    height: 1rem;
+    transform: scaleX(-1);
+    transition: transform 0.5s linear;
+  }
+
+  &:hover {
+    &::after {
+      transform: translateX(5px) scaleX(-1);
+    }
   }
 }

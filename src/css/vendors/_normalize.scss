@@ -99,7 +99,7 @@ address {
 }
 
 *:focus-visible {
-  outline: max(2px, 0.1em) solid rgba(var(--color-orange), 0.7);
+  outline: max(2px, 0.1em) solid var(--color-orange);
   border-radius: var(--radius-main);
 }
 

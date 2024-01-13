@@ -1,0 +1,115 @@
+@use '../utils/functions' as *;
+@use '../utils/mixins' as *;
+
+.card {
+  @include flex;
+  position: relative;
+  flex-direction: column;
+  //  border: 1px solid var(--color-white);
+  border-radius: var(--radius-big);
+  padding: clamp(0.8rem, vw(25), 1.56rem);
+  background-color: var(--color-black);
+  transition: border-color 0.2s linear;
+
+  //  mask-image: url('../images/icons/cursor.svg');
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-big);
+    background: radial-gradient(
+      circle at calc(var(--x) * 1px) calc(var(--y) * 1px),
+      hsl(0 0% 100% / 0.15),
+      transparent 8vmin
+    );
+    background-attachment: fixed;
+    opacity: var(--active, 0);
+    transition: opacity 0.2s;
+    pointer-events: none;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-big);
+    background: radial-gradient(
+        circle at calc(var(--x) * 1px) calc(var(--y) * 1px),
+        hsl(0 0% 100% / 0.5),
+        transparent 8vmin
+      ),
+      transparent;
+    background-attachment: fixed;
+    pointer-events: none;
+    mask: linear-gradient(var(--color-white), var(--color-white)) 50% 0 / 100%
+        4px no-repeat,
+      linear-gradient(var(--color-white), var(--color-white)) 50% 100% / 100%
+        4px no-repeat,
+      linear-gradient(var(--color-white), var(--color-white)) 0 50% / 4px 100%
+        no-repeat,
+      linear-gradient(var(--color-white), var(--color-white)) 100% 50% / 4px
+        100% no-repeat;
+  }
+
+  &__icon {
+    @include flex-v-center;
+    min-height: rem(104);
+
+    margin-bottom: rem(20);
+    gap: rem(20);
+
+    &::before {
+      @include mask;
+      position: relative;
+      width: rem(70);
+      height: rem(70);
+      mask-image: url('../images/icons/infinity.svg');
+      flex-shrink: 0;
+    }
+
+    &--digital {
+      &::before {
+        mask-image: url('../images/icons/infinity.svg');
+      }
+    }
+
+    &--seo {
+      &::before {
+        mask-image: url('../images/icons/polygon.svg');
+      }
+    }
+
+    &--smm {
+      &::before {
+        mask-image: url('../images/icons/in.svg');
+      }
+    }
+
+    &--adv {
+      &::before {
+        mask-image: url('../images/icons/triangle.svg');
+      }
+    }
+  }
+
+  p {
+    margin-bottom: rem(30);
+  }
+
+  span:not([class]) {
+    font-weight: var(--fw-500);
+    font-size: 1.125rem;
+    line-height: 1.65;
+  }
+
+  &__price {
+    @include flex-v-center;
+    gap: rem(50);
+  }
+
+  &:hover {
+    --active: 1;
+    //  border-color: transparent;
+  }
+}
