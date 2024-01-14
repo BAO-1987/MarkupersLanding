@@ -2,7 +2,6 @@
 html {
   position: relative;
   box-sizing: border-box;
-  line-height: 1.15;
   -moz-tab-size: 4;
   tab-size: 4;
   -webkit-text-size-adjust: 100%;
@@ -36,7 +35,6 @@ html:focus-within {
 }
 
 body {
-  line-height: 1.5;
   text-rendering: optimizespeed;
 }
 

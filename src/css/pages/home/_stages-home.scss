@@ -3,57 +3,9 @@
 
 .stages-home {
   &__text {
+    width: 100%;
+    max-width: rem(690);
     margin-bottom: rem(109);
   }
-
-  &__list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
-.card-numeric {
-  @include flex;
-  flex-direction: column;
-  gap: 20px;
-  position: relative;
-  padding: clamp(2rem, vw(70), 4.38rem) clamp(2rem, vw(78), 4.88rem)
-    clamp(1rem, vw(30), 1.88rem);
-  border-radius: var(--radius-big);
-  background-color: var(--color-brown);
-
-  &::before {
-    display: inline-block;
-    top: -60px;
-    counter-increment: li;
-    content: counter(li, decimal-leading-zero);
-    position: absolute;
-    font-weight: 700;
-    font-size: clamp(3.125rem, calc(2.5rem + 3.125vw), 6.25rem);
-    line-height: 1;
-
-    background-image: linear-gradient(
-      180deg,
-      #fff 60%,
-      rgb(144, 127, 83) 50.43%
-    );
-    -webkit-text-stroke-width: 0.006em;
-    -webkit-text-stroke-color: inherit;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    z-index: 5;
-  }
-
-  &__icon {
-    @include flex-all-sb;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: var(--color-white);
-    position: absolute;
-    left: rem(-55);
-    width: rem(120);
-    height: rem(120);
-    border-radius: var(--radius-round);
-    border: 8px solid var(--color-brown);
-  }
-}

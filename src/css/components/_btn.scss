@@ -67,6 +67,11 @@
     background-color: var(--color-orange-100);
   }
 
+  &--transparent {
+    border: 1px solid var(--color-white);
+    background-color: transparent;
+  }
+
   // &--icon {
   //   padding: 0.81rem 1.175rem;
   //   font-weight: var(--fw-500);

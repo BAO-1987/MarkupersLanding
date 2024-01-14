@@ -1,0 +1,11 @@
+@use '../../utils/functions' as *;
+@use '../../utils/mixins' as *;
+
+.about-home {
+  &__list {
+    display: grid;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: rem(30);
+  }
+}
