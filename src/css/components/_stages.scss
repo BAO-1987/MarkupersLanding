@@ -1,5 +1,5 @@
-@use "../utils/functions" as *;
-@use "../utils/mixins" as *;
+@use '../utils/functions' as *;
+@use '../utils/mixins' as *;
 
 .stages {
   &__list {
@@ -17,10 +17,9 @@
     gap: rem(20);
     position: relative;
     height: 100%;
-    padding: clamp(2rem, vw(70), 4.38rem) clamp(2rem, vw(78), 4.88rem)
-      clamp(1rem, vw(30), 1.88rem);
+    padding: clamp(2rem, vw(70), 4.35rem) clamp(2rem, vw(78), 4.88rem) clamp(1rem, vw(30), 1.88rem);
 
-      // подумати над адапитвом - верх не змінювати
+    // подумати над адапитвом - верх не змінювати
 
     // padding: 4.38rem clamp(2rem, vw(78), 4.88rem) clamp(1rem, vw(30), 1.88rem)
     //   4.88rem;
@@ -30,38 +29,49 @@
     background-color: var(--color-brown);
 
     &::before {
-      top: rem(-72);
+      // bottom: clamp(-2rem, vw(-72), -4.5rem);
+      top: calc(clamp(3rem, vw(59), 3.7rem) * -1);
+      // top: rem(-70);
+      left: rem(60);
       counter-increment: li;
       content: counter(li, decimal-leading-zero);
       position: absolute;
       font-weight: var(--fw-700);
-      font-size: clamp(5rem, 4.5375rem + 2.3125vw, 7.3125rem);
-      line-height: 1;
+      font-size: clamp(5rem, 4.75rem + 1.25vw, 6.25rem);
+      line-height: 1.17;
+      letter-spacing: 0.03em;
       background-image: linear-gradient(
         180deg,
-        #fff 60%,
+        #fff 50%,
         rgb(144, 127, 83) 50%
       );
+      // background-image: linear-gradient(
+      //   180deg,
+      //   #fff 60%,
+      //   transparent 75%
+      // );
       -webkit-text-stroke-width: 0.006em;
       -webkit-text-stroke-color: inherit;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      z-index: 5;
+      display: inline-block;
+      margin-bottom: 12px;
     }
 
     &::after {
       content: '';
       position: absolute;
       left: rem(-80);
+      left: calc(clamp(2.5rem, vw(80), 5rem) * -1);
       @include flex-all-center;
       top: 50%;
       transform: translateY(-50%);
 
-      width: clamp(3.5rem, vw(120), 7.5rem);
+      width: clamp(3.75rem, vw(120), 7.5rem);
       //  height: rem(120);
       aspect-ratio: 1/1;
       border-radius: var(--radius-round);
-      border: 8px solid var(--color-brown);
+      border: clamp(0.2rem, vw(8), 0.5rem) solid var(--color-brown);
       background-color: var(--color-white);
       background-repeat: no-repeat;
       background-size: clamp(2rem, vw(50), 3.125rem);

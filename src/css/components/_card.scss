@@ -8,6 +8,7 @@
   //  border: 1px solid var(--color-white);
   border-radius: var(--radius-big);
   padding: clamp(0.8rem, vw(25), 1.56rem);
+  height: 100%;
   background-color: var(--color-black);
   transition: border-color 0.2s linear;
 
@@ -106,6 +107,7 @@
 
   &__price {
     @include flex-v-center;
+    margin-top: auto;
     gap: rem(50);
   }
 
