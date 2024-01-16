@@ -1,0 +1,32 @@
+   <form class="form" action="#">
+     <p class="form-reviews__title title-second">Залишити відгук</p>
+
+     <div class="form__inner">
+
+       <label class="form__label">
+         <span></span>
+         <input class="form__input" placeholder="Name" type="text" id="name"
+           autocomplete="username" required>
+       </label>
+
+       <label class="form-reviews__label form-reviews__label--textarea">
+         <span>Ваш відгук *</span>
+         <textarea class="form__input form__input--textarea" placeholder="Введіть текст відгука" name="text"
+           id="reviews-text" rows="3" required></textarea>
+       </label>
+       <div class="form-reviews__box">
+
+         <label class="form-reviews__label">
+           <span>Email *</span>
+           <input class="form-reviews__input form__input" placeholder="youremail@mail.com" type="email" id="email"
+             autocomplete="username" required>
+         </label>
+       </div>
+     </div>
+     <label class="custom-checkbox">
+       <input type="checkbox" class="custom-checkbox__field" name="form-checkbox">
+       <span class="custom-checkbox__content">Зберегти моє ім’я, email та адресу сайта в цьому браузері для
+         наступних моїх коментарів.</span>
+     </label>
+     <button class="btn form-reviews__btn" type="submit">Залишити відгук</button>
+   </form>

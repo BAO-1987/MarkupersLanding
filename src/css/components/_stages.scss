@@ -1,5 +1,5 @@
-@use '../utils/functions' as *;
-@use '../utils/mixins' as *;
+@use '../utils/functions'as *;
+@use '../utils/mixins'as *;
 
 .stages {
   &__list {
@@ -9,6 +9,20 @@
     grid-template-columns: repeat(auto-fill, minmax(335px, 1fr));
     gap: rem(45);
     padding-left: 60px;
+
+    &--advantages {
+      padding: 0;
+
+      .stages__item {
+        padding-bottom: clamp(2rem, vw(70), 4.375rem);
+
+        &::after {
+          left: auto;
+          right: calc(clamp(2.5rem, vw(80), 5rem) * -1);
+          background-size: clamp(2rem, vw(70), 3.125rem);
+        }
+      }
+    }
   }
 
   &__item {
@@ -40,11 +54,9 @@
       font-size: clamp(5rem, 4.75rem + 1.25vw, 6.25rem);
       line-height: 1.17;
       letter-spacing: 0.03em;
-      background-image: linear-gradient(
-        180deg,
-        #fff 50%,
-        rgb(144, 127, 83) 50%
-      );
+      background-image: linear-gradient(180deg,
+          #fff 50%,
+          rgb(144, 127, 83) 50%);
       // background-image: linear-gradient(
       //   180deg,
       //   #fff 60%,
@@ -61,7 +73,8 @@
     &::after {
       content: '';
       position: absolute;
-      left: rem(-80);
+      z-index: 2;
+      // left: rem(-80);
       left: calc(clamp(2.5rem, vw(80), 5rem) * -1);
       @include flex-all-center;
       top: 50%;
@@ -102,19 +115,31 @@
       }
     }
 
-    h3 {
-      font-weight: var(--fw-700);
-      font-size: rem(30);
-      line-height: 1.5;
+    &--save {
+      &::after {
+        background-image: url('../images/icons/hand-money.svg');
+      }
     }
 
-    p {
-      font-size: rem(15);
-      max-width: 100%;
+    &--discount {
+      &::after {
+        background-image: url('../images/icons/making-money.svg');
+      }
     }
+  }
 
-    span:not([class]) {
-      margin-top: auto;
-    }
+  h3 {
+    font-weight: var(--fw-700);
+    font-size: rem(30);
+    line-height: 1.5;
+  }
+
+  p {
+    font-size: rem(15);
+    max-width: 100%;
+  }
+
+  span:not([class]) {
+    margin-top: auto;
   }
 }
