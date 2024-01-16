@@ -4,9 +4,9 @@
 .page {
   min-height: 100vh;
   font-family: var(--font-family-primary);
-   font-feature-settings: 'pnum' on, 'lnum' on;
-    font-weight: var(--fw-500);
-  //  -webkit-font-feature-settings: 'lnum';
+  font-variant-numeric: lining-nums proportional-nums;
+
+  font-weight: var(--fw-500);
   font-size: 1rem;
   line-height: 1.65;
   letter-spacing: 0.034em;
