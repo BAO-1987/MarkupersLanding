@@ -19,11 +19,11 @@ h3 {
 
 p,
 .text {
-  width: 100%;
-  max-width: rem(690);
   font-size: clamp(1rem, calc(0.975rem + 0.125vw), 1.125rem);
 }
 
 .text {
+  width: 100%;
+  max-width: rem(690);
   margin-bottom: clamp(1rem, vw(50), 3.12rem);
 }

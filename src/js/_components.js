@@ -1,5 +1,6 @@
 import './components/_cardHover';
 import './components/_portfolioSlider';
+import './components/_reviewsSlider';
 // import './components/_burger';
 // import './components/_tabs';
 // import './components/_reviewsSlider';

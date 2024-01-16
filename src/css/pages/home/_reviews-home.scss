@@ -1,0 +1,58 @@
+@use '../../utils/functions' as *;
+@use '../../utils/mixins' as *;
+
+.reviews-home {
+  &__content {
+    @include flex-sb;
+    margin-bottom: rem(50);
+  }
+
+  &__nav {
+    @include flex;
+  }
+}
+
+.reviews-slider {
+  overflow: hidden;
+
+  &__item {
+    @include flex-all-sb;
+
+    position: relative;
+    height: auto;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url('../images/icons/quotes.svg');
+      height: 22px;
+      width: 32px;
+    }
+  }
+
+  &__blockqoute {
+    @include flex;
+    flex-direction: column;
+    padding-top: 50px;
+    margin-right: rem(10);
+    width: 100%;
+    // min-height: 120px;
+    height: 100%;
+    max-width: rem(930);
+
+    p {
+      margin-bottom: rem(30);
+    }
+  }
+
+  &__content {
+    margin-top: auto;
+    @include flex;
+    gap: 50px;
+  }
+}

@@ -6,12 +6,8 @@ import Swiper, {
 const sliderOptions = {
   slidesPerView: 1,
   modules: [Pagination, Navigation],
-  dragable: true,
+  draggable: true,
   grabCursor: true,
-
-  pagination: {
-    el: '.swiper-pagination',
-  },
 
   navigation: {
     nextEl: ".reviews-slider__next",
