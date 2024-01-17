@@ -1,0 +1,15 @@
+@use '../../utils/functions'as *;
+@use '../../utils/mixins'as *;
+
+.contacts-home {
+  &__inner {
+    @include flex-sb;
+    border-radius: var(--radius-big);
+  }
+
+  &__desc {
+    padding: clamp(2rem, vw(100), 6.25rem);
+    background-color: var(--color-white);
+    color: var(--color-black);
+  }
+}

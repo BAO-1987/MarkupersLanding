@@ -1,11 +1,11 @@
 import Swiper, {
-  Pagination,
-  Navigation,
+  Navigation
 } from 'swiper';
 
 const sliderOptions = {
   slidesPerView: 1,
-  modules: [Pagination, Navigation],
+  modules: [Navigation],
+  spaceBetween: 30,
   draggable: true,
   grabCursor: true,
 
