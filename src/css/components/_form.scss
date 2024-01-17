@@ -1,5 +1,5 @@
-@use '../utils/functions/'as *;
-@use '../utils/mixins'as *;
+@use "../utils/functions/" as *;
+@use "../utils/mixins" as *;
 
 .form {
   width: 100%;
@@ -13,20 +13,33 @@
   &__label {
     position: relative;
 
-    // &--textarea {
-    //   padding-top: 70px;
-    // }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -10px;
+      width: 7px;
+      height: 7px;
+      border-radius: var(--radius-round);
+      background-color: var(--color-red);
+      transform: translateY(-50%);
+    }
+
+    &--textarea {
+      &::before {
+        content: none;
+      }
+    }
   }
 
   &__input {
-
     width: 100%;
-    padding: 0 0 rem(6) rem(10);
+    padding: rem(10) rem(10) rem(6) rem(10);
     border-bottom: 1px solid var(--color-gray);
 
     &--textarea {
       // padding-top: 18px;
-      height: 30px;
+      // height: 30px;
       resize: none;
       border: none;
       border-bottom: 1px solid var(--color-gray);
@@ -35,6 +48,16 @@
     &::placeholder {
       font-size: rem(15);
       color: var(--color-gray);
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    max-width: 100%;
+    border-color: var(--color-gray-100);
+    color: var(--color-gray-100);
+    &::before {
+      content: none;
     }
   }
 }
