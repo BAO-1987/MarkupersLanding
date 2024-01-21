@@ -1,15 +1,84 @@
-@use '../../utils/functions'as *;
-@use '../../utils/mixins'as *;
+@use '../../utils/functions' as *;
+@use '../../utils/mixins' as *;
 
 .contacts-home {
   &__inner {
-    @include flex-sb;
+   display: grid;
+   grid-template-columns: repeat(2, auto);
     border-radius: var(--radius-big);
   }
 
   &__desc {
     padding: clamp(2rem, vw(100), 6.25rem);
-    background-color: var(--color-white);
     color: var(--color-black);
+    background-color: var(--color-white);
+  }
+
+  &__info {
+    @include flex-sb;
+    flex-direction: column;
+    padding: clamp(2rem, vw(100), 6.25rem);
+    background-color: var(--color-brown);
+  }
+}
+
+.contact {
+  &__follow {
+    .social {
+      flex-direction: row;
+    }
+
+    .social__link {
+      background-color: var(--color-white);
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: rem(20);
+  }
+
+  &__item {
+    @include flex;
+    flex-direction: column;
+    gap: rem(10);
+  }
+
+  &__name {
+    @include flex;
+    position: relative;
+    font-size: rem(15);
+    gap: 15px;
+
+    &::before {
+      @include mask;
+      position: relative;
+      mask-image: url('../images/icons/email.svg');
+      width: rem(24);
+      height: rem(24);
+    }
+
+    &--email {
+      &::before {
+        mask-image: url('../images/icons/email.svg');
+      }
+    }
+
+    &--phone {
+      &::before {
+        mask-image: url('../images/icons/phone.svg');
+      }
+    }
+
+    &--schedule {
+      &::before {
+        mask-image: url('../images/icons/schedule.svg');
+      }
+    }
+  }
+
+  &__link {
+    font-size: clamp(1rem, calc(0.975rem + 0.125vw), 1.125rem);
   }
 }

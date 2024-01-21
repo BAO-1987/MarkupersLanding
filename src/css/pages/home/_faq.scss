@@ -1,0 +1,61 @@
+@use '../../utils/functions' as *;
+@use '../../utils/mixins' as *;
+
+.faq {
+  &__list {
+    @include flex;
+    flex-direction: column;
+    gap: rem(20);
+  }
+
+  &__item {
+    @include flex;
+    position: relative;
+    align-items: center;
+    width: 100%;
+    max-width: rem(930);
+
+    > .tabs__link {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+      }
+    }
+
+    &-title {
+      font-weight: var(--fw-700);
+      font-size: 30px;
+      line-height: 1.5;
+    }
+
+    &--client {
+      margin-left: auto;
+      padding: rem(30) rem(60);
+      border-radius: 20px 20px 1px;
+      background-color: var(--color-brown);
+    }
+
+    &--manager {
+      display: flex;
+      gap: 30px;
+      margin-right: auto;
+    }
+  }
+
+  &__content {
+    padding: rem(30) rem(60);
+    border-radius: 20px 20px 20px 1px;
+    background-color: var(--color-white);
+    color: var(--color-ebony);
+    animation: slide-up-slow 2s forwards, fade-in 2s forwards;
+    > div {
+      @include flex;
+      gap: rem(30);
+    }
+  }
+}

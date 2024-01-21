@@ -1,8 +1,9 @@
-@use "../utils/functions/" as *;
-@use "../utils/mixins" as *;
+@use '../utils/functions/' as *;
+@use '../utils/mixins' as *;
 
 .form {
   width: 100%;
+  font-size: rem(15);
 
   &__inner {
     @include flex;
@@ -14,7 +15,7 @@
     position: relative;
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: 50%;
       left: -10px;
@@ -49,6 +50,15 @@
       font-size: rem(15);
       color: var(--color-gray);
     }
+  }
+
+  &__necessarily {
+    margin-bottom: rem(20);
+  }
+
+  &__text {
+    padding-right: 1rem;
+    font-size: rem(15);
   }
 
   &__btn {
