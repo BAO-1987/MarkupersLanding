@@ -1,5 +1,5 @@
-@use '../utils/functions'as *;
-@use '../utils/mixins'as *;
+@use "../utils/functions" as *;
+@use "../utils/mixins" as *;
 
 .article {
   @include flex-v-center;
@@ -11,7 +11,9 @@
   padding: clamp(1rem, vw(30), 1.88rem);
   width: fit-content;
   height: 100%;
-  transition: border-color 0.3s linear, box-shadow 0.3s linear;
+  transition:
+    border-color 0.3s linear,
+    box-shadow 0.3s linear;
   cursor: pointer;
   gap: rem(20);
 
@@ -31,7 +33,7 @@
 
     a {
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         z-index: 2;
         inset: 0;

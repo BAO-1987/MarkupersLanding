@@ -1,5 +1,5 @@
-@use '../../utils/functions' as *;
-@use '../../utils/mixins' as *;
+@use "../../utils/functions" as *;
+@use "../../utils/mixins" as *;
 
 .portfolio-home {
   &__inner {
@@ -41,9 +41,9 @@
   width: 100%;
   max-width: rem(430);
 
-   h3 {
-      margin-bottom: rem(30);
-    }
+  h3 {
+    margin-bottom: rem(30);
+  }
 
   &__list {
     @include flex;
@@ -62,7 +62,7 @@
     line-height: 1.65;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       border-radius: var(--radius-round);
       left: 0;
@@ -80,33 +80,18 @@
       flex: 0 1 100%;
 
       &::after {
-        content: '';
+        content: "";
         position: relative;
         margin: 0 rem(30);
 
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
-        background-image: url('../images/icons/line.svg');
+        background-image: url("../images/icons/line.svg");
         height: 6px;
         width: 100%;
       }
-
-      // &::before {
-      //   content: '';
-      //   position: absolute;
-      //   width: 5px;
-      //   height: 5px;
-      //   border-radius: 50%;
-      //   background-color: yellow;
-      //   right: 0;
-      // }
     }
-
-    // dd {
-    //   margin: 0;
-    //   padding-left: 30px;
-    // }
   }
 
   &__category {

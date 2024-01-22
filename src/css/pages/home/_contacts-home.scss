@@ -1,10 +1,10 @@
-@use '../../utils/functions' as *;
-@use '../../utils/mixins' as *;
+@use '../../utils/functions'as *;
+@use '../../utils/mixins'as *;
 
 .contacts-home {
   &__inner {
-   display: grid;
-   grid-template-columns: repeat(2, auto);
+    display: grid;
+    grid-template-columns: repeat(2, auto);
     border-radius: var(--radius-big);
   }
 
@@ -12,6 +12,10 @@
     padding: clamp(2rem, vw(100), 6.25rem);
     color: var(--color-black);
     background-color: var(--color-white);
+  }
+
+  &__text {
+    margin-bottom: clamp(2rem, vw(50), 3.12rem);
   }
 
   &__info {

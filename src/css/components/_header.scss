@@ -1,12 +1,12 @@
-@use '../utils/functions/' as *;
-@use '../utils/mixins' as *;
+@use '../utils/functions/'as *;
+@use '../utils/mixins'as *;
 
 .header {
-
   position: absolute;
   top: 0;
+  padding: rem(50) 0;
   width: 100%;
-  padding: rem(40) 0;
+
 
   &__inner {
     @include flex-all-sb;

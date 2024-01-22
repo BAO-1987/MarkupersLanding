@@ -1,5 +1,5 @@
-@use '../../utils/functions' as *;
-@use '../../utils/mixins' as *;
+@use "../../utils/functions"as *;
+@use "../../utils/mixins"as *;
 
 .faq {
   &__list {
@@ -15,18 +15,6 @@
     width: 100%;
     max-width: rem(930);
 
-    > .tabs__link {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-
-      &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-      }
-    }
-
     &-title {
       font-weight: var(--fw-700);
       font-size: 30px;
@@ -35,25 +23,38 @@
 
     &--client {
       margin-left: auto;
+      border-radius: rem(20) rem(20) 1px;
       padding: rem(30) rem(60);
-      border-radius: 20px 20px 1px;
       background-color: var(--color-brown);
     }
 
     &--manager {
       display: flex;
-      gap: 30px;
       margin-right: auto;
+      gap: rem(30);
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: rem(30);
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
     }
   }
 
   &__content {
+    border-radius: rem(20) rem(20) rem(20) 1px;
     padding: rem(30) rem(60);
-    border-radius: 20px 20px 20px 1px;
-    background-color: var(--color-white);
     color: var(--color-ebony);
+    background-color: var(--color-white);
     animation: slide-up-slow 2s forwards, fade-in 2s forwards;
-    > div {
+
+    >div {
       @include flex;
       gap: rem(30);
     }
