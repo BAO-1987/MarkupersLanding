@@ -1,5 +1,5 @@
-@use '../utils/functions/' as *;
-@use '../utils/mixins/' as *;
+@use '../utils/functions/'as *;
+@use '../utils/mixins/'as *;
 
 .title {
   margin-bottom: rem(20);
@@ -12,7 +12,7 @@
 .card-title,
 h3 {
   font-weight: var(--fw-900);
-  font-size: clamp(1.875rem, calc(1.75rem + 0.625vw), 2.5rem);
+  font-size: clamp(1.35rem, calc(1rem + 1.25vw), 2.5rem);
   line-height: 1.3;
   letter-spacing: 0.06em;
 }
@@ -23,7 +23,7 @@ p,
 }
 
 .text {
-  width: 100%;
-  max-width: rem(690);
   margin-bottom: clamp(1rem, vw(50), 3.12rem);
+  width: 100%;
+  max-width: rem(660);
 }

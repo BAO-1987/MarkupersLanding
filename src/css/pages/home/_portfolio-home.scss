@@ -31,13 +31,14 @@
 
   &__image {
     img {
-      max-width: rem(930);
+      width: rem(930);
       min-height: rem(465);
     }
   }
 }
 
 .portfolio-desc {
+  flex-shrink: 0;
   width: 100%;
   max-width: rem(430);
 

@@ -1,5 +1,5 @@
-@use '../utils/functions/' as *;
-@use '../utils/mixins' as *;
+@use '../utils/functions/'as *;
+@use '../utils/mixins'as *;
 
 .footer {
   padding: clamp(2rem, vw(80), 5rem) 0;
@@ -7,6 +7,12 @@
 
   &__inner {
     @include flex-all-sb;
+    gap: 1rem;
+
+    @include media(mobile-l) {
+      flex-direction: column;
+    }
+
   }
 
   &__copyright {

@@ -1,11 +1,10 @@
-@use '../utils/functions/' as *;
-@use '../utils/mixins' as *;
+@use '../utils/functions/'as *;
+@use '../utils/mixins'as *;
 
 .page {
   min-height: 100vh;
   font-family: var(--font-family-primary);
   font-variant-numeric: lining-nums proportional-nums;
-
   font-weight: var(--fw-500);
   font-size: 1rem;
   line-height: 1.65;
@@ -32,7 +31,7 @@
   &.open {
     overflow: hidden;
 
-    > .page__body::before {
+    >.page__body::before {
       width: 100%;
     }
   }
@@ -74,18 +73,36 @@
 .link {
   display: inline-flex;
   align-items: center;
+  font-size: clamp(1rem, calc(0.975rem + 0.125vw), 1.125rem);
   color: var(--color-orange);
   gap: 1rem;
   white-space: nowrap;
 
+  &::before,
   &::after {
     @include mask;
     position: relative;
+  }
+
+  &::after {
     mask-image: url('../images/icons/arrow.svg');
     width: 1rem;
     height: 1rem;
     transform: scaleX(-1);
     transition: transform 0.5s linear;
+  }
+
+  &--view {
+    &::before {
+      mask-image: url('../images/icons/pdf.svg');
+      width: rem(24);
+      height: rem(24);
+      left: auto;
+    }
+
+    &::after {
+      content: none;
+    }
   }
 
   &:hover {

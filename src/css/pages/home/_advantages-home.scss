@@ -1,0 +1,8 @@
+@use '../../utils/functions'as *;
+@use '../../utils/mixins'as *;
+
+.advanatages-home {
+  &__text {
+    margin-bottom: rem(110);
+  }
+}

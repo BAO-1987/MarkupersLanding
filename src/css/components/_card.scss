@@ -5,10 +5,11 @@
   @include flex;
   position: relative;
   flex-direction: column;
-  //  border: 1px solid var(--color-white);
+  border: 1px solid var(--color-white);
   border-radius: var(--radius-big);
   padding: clamp(0.8rem, vw(25), 1.56rem);
   height: 100%;
+  gap: rem(20);
   background-color: var(--color-black);
   transition: border-color 0.2s linear;
 
@@ -57,7 +58,7 @@
     @include flex-v-center;
     min-height: rem(104);
 
-    margin-bottom: rem(20);
+    // margin-bottom: rem(20);
     gap: rem(20);
 
     &::before {
@@ -94,9 +95,9 @@
     }
   }
 
-  p {
-    margin-bottom: rem(30);
-  }
+  // p {
+  //   margin-bottom: rem(30);
+  // }
 
   span:not([class]) {
     font-weight: var(--fw-500);

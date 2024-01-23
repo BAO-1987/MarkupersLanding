@@ -11,15 +11,21 @@
     padding-left: 60px;
 
     &--advantages {
-      padding: 0;
+      padding: 0 60px 0 0;
 
       .stages__item {
-        padding-bottom: clamp(2rem, vw(70), 4.375rem);
+        padding-bottom: clamp(2rem, vw(50), 3.12rem);
+  
 
         &::after {
           left: auto;
           right: calc(clamp(2.5rem, vw(80), 5rem) * -1);
-          background-size: clamp(2rem, vw(70), 3.125rem);
+          background-size: clamp(2rem, vw(70), 4.375rem);
+        }
+
+        p {
+          font-weight: var(--fw-700);
+          font-size: clamp(1rem, calc(0.975rem + 0.125vw), 1.125rem);
         }
       }
     }
@@ -37,10 +43,26 @@
 
     // padding: 4.38rem clamp(2rem, vw(78), 4.88rem) clamp(1rem, vw(30), 1.88rem)
     //   4.88rem;
-    font-size: rem(15);
-    line-height: 1.5;
+    // font-size: rem(15);
+    // line-height: 1.5;
     border-radius: var(--radius-big);
     background-color: var(--color-brown);
+
+    h3 {
+      font-weight: var(--fw-700);
+      font-size: rem(30);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: rem(15);
+      letter-spacing: 0.028em;
+      line-height: 1.5;
+    }
+
+    span:not([class]) {
+      margin-top: auto;
+    }
 
     &::before {
       // bottom: clamp(-2rem, vw(-72), -4.5rem);
@@ -128,18 +150,5 @@
     }
   }
 
-  h3 {
-    font-weight: var(--fw-700);
-    font-size: rem(30);
-    line-height: 1.5;
-  }
 
-  p {
-    font-size: rem(15);
-    max-width: 100%;
-  }
-
-  span:not([class]) {
-    margin-top: auto;
-  }
 }

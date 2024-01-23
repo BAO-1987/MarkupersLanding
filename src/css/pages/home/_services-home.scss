@@ -1,14 +1,18 @@
-@use '../../utils/functions' as *;
-@use '../../utils/mixins' as *;
+@use "../../utils/functions"as *;
+@use "../../utils/mixins"as *;
 
 .services-home {
-  &__text {
-    width: 100%;
+  &__list {
+    --item: 335px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--item), 1fr));
+    gap: rem(30);
+
+    @include media(mobile-l) {
+      --item: 220px;
+    }
   }
 
-  &__list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(335px, 1fr));
-    gap: rem(30);
-  }
+
 }
