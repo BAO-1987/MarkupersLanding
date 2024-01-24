@@ -1,44 +1,53 @@
-@use "../../utils/functions" as *;
-@use "../../utils/mixins" as *;
+@use "../../utils/functions"as *;
+@use "../../utils/mixins"as *;
 
 .portfolio-home {
   &__inner {
-    @include flex-all-sb;
+    margin-bottom: rem(50);
+
   }
 
   &__content {
-    margin-bottom: rem(50);
+    @include flex-all-sb;
+    align-items: flex-end;
+
+    @include media(mobile-l) {
+      align-items: flex-start;
+    }
   }
 
   &__text {
     margin-bottom: 0;
   }
 
-  &__nav {
-    @include flex;
-    align-items: flex-end;
-    gap: rem(30);
-  }
 }
 
 .portfolio-slider {
   overflow: hidden;
 
+  &__nav {
+    @include flex;
+    gap: rem(30);
+  }
+
   &__item {
     @include flex-all-sb;
     gap: 1rem;
+
+    @include media(mobile-l) {
+      flex-direction: column;
+    }
   }
 
   &__image {
     img {
       width: rem(930);
-      min-height: rem(465);
+      aspect-ratio: 2/1;
     }
   }
 }
 
 .portfolio-desc {
-  flex-shrink: 0;
   width: 100%;
   max-width: rem(430);
 
@@ -97,7 +106,7 @@
 
   &__category {
     display: block;
-    margin-bottom: rem(50);
+    margin-bottom: clamp(2rem, vw(50), 3.125rem);
     color: var(--color-gray);
     font-size: rem(15);
     line-height: 1.5;

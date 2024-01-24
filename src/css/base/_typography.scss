@@ -27,3 +27,27 @@ p,
   width: 100%;
   max-width: rem(660);
 }
+
+.title-animation {
+  width: fit-content;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    z-index: 1;
+    width: 0;
+    height: 100%;
+    background-color: var(--color-orange);
+    animation: 1s .2s forwards box-show,
+      1s 1.4s forwards title-before-hide;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  >span {
+    opacity: 0;
+    animation: .1s 1.1s forwards title-show;
+  }
+}

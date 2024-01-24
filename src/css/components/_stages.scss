@@ -3,10 +3,11 @@
 
 .stages {
   &__list {
+    --item: 305px;
     margin-bottom: clamp(1.5rem, vw(50), 3.12rem);
     counter-reset: li;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(335px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(var(--item), 1fr));
     gap: rem(45);
     padding-left: 60px;
 
@@ -37,9 +38,8 @@
     gap: rem(20);
     position: relative;
     height: 100%;
-    padding: clamp(2rem, vw(70), 4.35rem) clamp(2rem, vw(78), 4.88rem) clamp(1rem, vw(30), 1.88rem);
+    padding: clamp(1rem, vw(70), 4.35rem) clamp(1rem, vw(78), 4.88rem) clamp(1rem, vw(30), 1.88rem);
 
-    // подумати над адапитвом - верх не змінювати
 
     // padding: 4.38rem clamp(2rem, vw(78), 4.88rem) clamp(1rem, vw(30), 1.88rem)
     //   4.88rem;
