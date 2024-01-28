@@ -1,15 +1,20 @@
-@use '../../utils/functions'as *;
-@use '../../utils/mixins'as *;
+@use '../../utils/functions' as *;
+@use '../../utils/mixins' as *;
 
 .contacts-home {
   &__inner {
     display: grid;
     grid-template-columns: repeat(2, auto);
     border-radius: var(--radius-big);
+
+    @include media(mobile-l) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+    }
   }
 
   &__desc {
-    padding: clamp(2rem, vw(100), 6.25rem);
+    padding: clamp(1.2rem, vw(100), 6.25rem);
     color: var(--color-black);
     background-color: var(--color-white);
   }
@@ -21,8 +26,9 @@
   &__info {
     @include flex-sb;
     flex-direction: column;
-    padding: clamp(2rem, vw(100), 6.25rem);
+    padding: clamp(1.2rem, vw(100), 6.25rem);
     background-color: var(--color-brown);
+    gap: 1rem;
   }
 }
 
@@ -41,11 +47,17 @@
     display: grid;
     grid-template-columns: repeat(3, auto);
     gap: rem(20);
+
+    @include media(mobile-m) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
   }
 
   &__item {
     @include flex;
     flex-direction: column;
+    white-space: nowrap;
     gap: rem(10);
   }
 
@@ -53,7 +65,7 @@
     @include flex;
     position: relative;
     font-size: rem(15);
-    gap: 15px;
+    gap: rem(15);
 
     &::before {
       @include mask;

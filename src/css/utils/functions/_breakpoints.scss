@@ -1,8 +1,9 @@
-$breakpoints: (
+$breakpoints: ("mobile-sm": 374px,
   "mobile-s": 475px,
   "mobile-m": 576px,
-  "mobile-l":768px,
+  "mobile-l": 768px,
   "tablet": 992px,
+  "tablet-wide": 1200px,
 );
 
 @mixin media($width, $type: max) {

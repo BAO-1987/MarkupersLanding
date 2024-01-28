@@ -2,6 +2,8 @@
 @use '../../utils/mixins'as *;
 
 .hero {
+  position: relative;
+  isolation: isolate;
   @include flex-all-sb;
   // gap: 1rem;
 

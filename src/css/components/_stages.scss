@@ -1,22 +1,28 @@
-@use '../utils/functions'as *;
-@use '../utils/mixins'as *;
+@use '../utils/functions' as *;
+@use '../utils/mixins' as *;
 
 .stages {
   &__list {
-    --item: 305px;
+    --item: 280px;
     margin-bottom: clamp(1.5rem, vw(50), 3.12rem);
     counter-reset: li;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(var(--item), 1fr));
+
     gap: rem(45);
-    padding-left: 60px;
+    padding-left: clamp(2rem, vw(60), 3.75rem);
+    grid-template-columns: repeat(auto-fit, minmax(var(--item), 1fr));
+
+    @include media(mobile-m) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
 
     &--advantages {
-      padding: 0 60px 0 0;
+       --item: 250px;
+      padding: 0 clamp(2.5rem, vw(60), 3.75rem) 0 0;
 
       .stages__item {
         padding-bottom: clamp(2rem, vw(50), 3.12rem);
-  
 
         &::after {
           left: auto;
@@ -28,6 +34,20 @@
           font-weight: var(--fw-700);
           font-size: clamp(1rem, calc(0.975rem + 0.125vw), 1.125rem);
         }
+
+        &:last-child {
+          @include media(tablet) {
+            max-width: rem(400);
+            margin: 0 auto;
+            grid-column: 2 span;
+          }
+
+          @include media(mobile-m) {
+            grid-column: auto;
+            max-width: 100%;
+            margin: 0;
+          }
+        }
       }
     }
   }
@@ -38,8 +58,8 @@
     gap: rem(20);
     position: relative;
     height: 100%;
-    padding: clamp(1rem, vw(70), 4.35rem) clamp(1rem, vw(78), 4.88rem) clamp(1rem, vw(30), 1.88rem);
-
+    padding: clamp(1.5rem, vw(70), 4.35rem) clamp(1rem, vw(70), 4.35rem)
+      clamp(1rem, vw(30), 1.88rem) clamp(1.5rem, vw(78), 4.88rem);
 
     // padding: 4.38rem clamp(2rem, vw(78), 4.88rem) clamp(1rem, vw(30), 1.88rem)
     //   4.88rem;
@@ -49,6 +69,7 @@
     background-color: var(--color-brown);
 
     h3 {
+      padding-top: rem(10);
       font-weight: var(--fw-700);
       font-size: rem(30);
       line-height: 1.5;
@@ -76,20 +97,15 @@
       font-size: clamp(5rem, 4.75rem + 1.25vw, 6.25rem);
       line-height: 1.17;
       letter-spacing: 0.03em;
-      background-image: linear-gradient(180deg,
-          #fff 50%,
-          rgb(144, 127, 83) 50%);
-      // background-image: linear-gradient(
-      //   180deg,
-      //   #fff 60%,
-      //   transparent 75%
-      // );
+      background-image: linear-gradient(
+        180deg,
+        #fff 50%,
+        rgb(144, 127, 83) 50%
+      );
       -webkit-text-stroke-width: 0.006em;
       -webkit-text-stroke-color: inherit;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      display: inline-block;
-      margin-bottom: 12px;
     }
 
     &::after {
@@ -111,6 +127,7 @@
       background-repeat: no-repeat;
       background-size: clamp(2rem, vw(50), 3.125rem);
       background-position: center;
+      shape-margin: 2rem;
     }
 
     &--ds {
@@ -148,7 +165,19 @@
         background-image: url('../images/icons/making-money.svg');
       }
     }
+
+    &:last-child {
+      @include media(tablet) {
+        max-width: rem(400);
+        margin: 0 auto;
+        grid-column: 2 span;
+      }
+
+      @include media(mobile-m) {
+        grid-column: auto;
+        max-width: 100%;
+        margin: 0;
+      }
+    }
   }
-
-
 }

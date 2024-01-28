@@ -70,22 +70,53 @@ function moveRight() {
   }
 }
 
+// function switchTab(newTab) {
+//   const activePanelId = newTab.getAttribute("href");
+//   const activePanel = tabsContainer.querySelector(activePanelId);
+
+//   tabButtons.forEach((button) => {
+//     button.setAttribute("aria-selected", false);
+//     button.setAttribute("tabindex", "-1");
+//   });
+
+//   tabPanels.forEach((panel) => {
+//     panel.setAttribute("hidden", true);
+//   });
+
+//   activePanel.removeAttribute("hidden", false);
+
+//   newTab.setAttribute("aria-selected", true);
+//   newTab.setAttribute("tabindex", "0");
+//   newTab.focus();
+// }
+
+
 function switchTab(newTab) {
-  const activePanelId = newTab.getAttribute("href");
-  const activePanel = tabsContainer.querySelector(activePanelId);
+  const isActive = newTab.getAttribute("aria-selected") === "true";
 
-  tabButtons.forEach((button) => {
-    button.setAttribute("aria-selected", false);
-    button.setAttribute("tabindex", "-1");
-  });
+  if (isActive) {
+    // Якщо вкладка вже активна, закрити її
+    newTab.setAttribute("aria-selected", "false");
+    newTab.setAttribute("tabindex", "-1");
+    tabsContainer.querySelector(newTab.getAttribute("href")).setAttribute("hidden", "true");
+  } else {
+    // В іншому випадку, виконати звичайну логіку перемикання
+    const activePanelId = newTab.getAttribute("href");
+    const activePanel = tabsContainer.querySelector(activePanelId);
 
-  tabPanels.forEach((panel) => {
-    panel.setAttribute("hidden", true);
-  });
+    tabButtons.forEach((button) => {
+      button.setAttribute("aria-selected", false);
+      button.setAttribute("tabindex", "-1");
+    });
 
-  activePanel.removeAttribute("hidden", false);
+    tabPanels.forEach((panel) => {
+      panel.setAttribute("hidden", true);
+    });
 
-  newTab.setAttribute("aria-selected", true);
-  newTab.setAttribute("tabindex", "0");
-  newTab.focus();
+    activePanel.removeAttribute("hidden", false);
+
+    newTab.setAttribute("aria-selected", true);
+    newTab.setAttribute("tabindex", "0");
+    newTab.focus();
+  }
 }

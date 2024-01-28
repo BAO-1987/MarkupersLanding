@@ -1,5 +1,5 @@
-@use '../utils/functions/'as *;
-@use '../utils/mixins'as *;
+@use '../utils/functions/' as *;
+@use '../utils/mixins' as *;
 
 .page {
   min-height: 100vh;
@@ -31,7 +31,7 @@
   &.open {
     overflow: hidden;
 
-    >.page__body::before {
+    > .page__body::before {
       width: 100%;
     }
   }
@@ -75,7 +75,7 @@
   align-items: center;
   font-size: clamp(1rem, calc(0.975rem + 0.125vw), 1.125rem);
   color: var(--color-orange);
-  gap: 1rem;
+  gap: rem(15);
   white-space: nowrap;
 
   &::before,
@@ -83,6 +83,7 @@
     @include mask;
     position: relative;
   }
+
 
   &::after {
     mask-image: url('../images/icons/arrow.svg');
@@ -110,4 +111,12 @@
       transform: translateX(5px) scaleX(-1);
     }
   }
+}
+
+canvas {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  height: var(--vh);
 }

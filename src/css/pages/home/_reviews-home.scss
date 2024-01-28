@@ -1,5 +1,5 @@
-@use '../../utils/functions'as *;
-@use '../../utils/mixins'as *;
+@use '../../utils/functions' as *;
+@use '../../utils/mixins' as *;
 
 .reviews-home {
   &__content {
@@ -18,9 +18,9 @@
 
   &__item {
     @include flex-all-sb;
-
-    position: relative;
+    gap: 1rem;
     height: auto;
+    position: relative;
 
     &::before {
       content: '';
@@ -34,31 +34,57 @@
       height: rem(22);
       width: rem(32);
     }
+
+    @include media(tablet) {
+      flex-direction: column-reverse;
+    }
   }
 
   &__blockqoute {
     @include flex;
+
     flex-direction: column;
-    padding-top: 50px;
-    margin-right: rem(10);
+    padding-top: clamp(2rem, vw(50), 3.125rem);
     width: 100%;
-    // min-height: 120px;
     height: 100%;
+
     max-width: rem(930);
 
     p {
-      padding-top: rem(30);
+      margin-bottom: rem(30);
     }
   }
 
   &__content {
-    margin-top: auto;
     @include flex;
-    gap: 50px;
+
+    margin-top: auto;
+    gap: clamp(1rem, vw(50), 3.125rem);
+    @include media(mobile-l) {
+      flex-direction: column;
+    }
   }
 
   &__author {
     font-weight: var(--fw-700);
     font-size: rem(18);
+  }
+
+  &__image {
+    margin-left: auto;
+    img {
+      width: rem(380);
+      aspect-ratio: 2/0.92;
+    }
+  }
+
+  &__link {
+    @include flex-v-center;
+
+    gap: clamp(0.7rem, vw(50), 3.125rem);
+
+    @include media(mobile-sm) {
+      flex-wrap: wrap;
+    }
   }
 }

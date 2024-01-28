@@ -56,7 +56,7 @@
 
   &__icon {
     @include flex-v-center;
-    min-height: rem(104);
+    min-height: clamp(2rem, vw(104), 6.5rem);
 
     // margin-bottom: rem(20);
     gap: rem(20);
