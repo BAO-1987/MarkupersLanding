@@ -1,12 +1,12 @@
-@use '../../utils/functions' as *;
-@use '../../utils/mixins' as *;
+@use '../../utils/functions'as *;
+@use '../../utils/mixins'as *;
 
 .about-home {
   &__list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
     place-items: center;
-    gap: rem(30);
+    gap: clamp(1rem, vw(30), 1.875rem);
     // display: flex;
     // flex-wrap: wrap;
     // align-items: center;
@@ -16,6 +16,15 @@
     //   grid-template-columns: repeat(2, 1fr);
     // }
 
+    @include media(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      place-items: center;
+    }
+
+    @include media(mobile-m) {
+      @include flex;
+      gap: 0;
+    }
 
   }
 
@@ -29,4 +38,3 @@
     overflow: hidden;
   }
 }
-

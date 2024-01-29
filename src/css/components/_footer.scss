@@ -6,7 +6,11 @@
   background-color: var(--color-brown);
 
   &__inner {
-    @include flex-all-sb;
+    // @include flex-all-sb;
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    grid-template-columns: repeat(3, auto);
     gap: 1rem;
 
     @include media(mobile-l) {

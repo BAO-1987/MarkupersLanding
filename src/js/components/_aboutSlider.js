@@ -1,6 +1,4 @@
-import Swiper, {
-  Pagination
-} from 'swiper';
+import Swiper from 'swiper';
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -38,9 +36,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
   resizableSwiper(
-    '(max-width: 676px)',
+    '(max-width: 575px)',
     '.about-home__slider', {
-      modules: [Pagination],
       loop: true,
       spaceBetween: 20,
       grabCursor: true,

@@ -3,6 +3,6 @@
 
 .advanatages-home {
   &__text {
-    margin-bottom: rem(110);
+    margin-bottom: clamp(3.5rem, vw(109), 6.875rem);
   }
 }

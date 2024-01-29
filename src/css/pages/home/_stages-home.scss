@@ -1,11 +1,11 @@
-@use '../../utils/functions' as *;
-@use '../../utils/mixins' as *;
+@use '../../utils/functions'as *;
+@use '../../utils/mixins'as *;
 
 .stages-home {
   &__text {
+    margin-bottom: clamp(3.5rem, vw(109), 6.875rem);
     width: 100%;
     max-width: rem(690);
-    margin-bottom: rem(109);
+
   }
 }
-

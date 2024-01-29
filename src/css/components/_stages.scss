@@ -3,12 +3,11 @@
 
 .stages {
   &__list {
-    --item: 280px;
+    --item: 240px;
     margin-bottom: clamp(1.5rem, vw(50), 3.12rem);
     counter-reset: li;
     display: grid;
-
-    gap: rem(45);
+    gap: 2.81rem clamp(2rem, vw(45), 2.81rem);
     padding-left: clamp(2rem, vw(60), 3.75rem);
     grid-template-columns: repeat(auto-fit, minmax(var(--item), 1fr));
 
