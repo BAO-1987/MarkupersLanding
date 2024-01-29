@@ -1,14 +1,27 @@
-@use '../utils/functions/'as *;
-@use '../utils/mixins'as *;
+@use '../utils/functions/' as *;
+@use '../utils/mixins' as *;
 
 .header {
-  position: absolute;
+  z-index: 99;
+  position: fixed;
   top: 0;
   padding: rem(50) 0;
   width: 100%;
-
+  background-color: var(--color-black);
+  transition: transform 0.3s;
 
   &__inner {
     @include flex-all-sb;
+  }
+
+  &.scroll {
+  }
+
+  &.hide {
+    transform: translateY(-110%);
+
+    &.opened {
+      transform: translateY(0);
+    }
   }
 }

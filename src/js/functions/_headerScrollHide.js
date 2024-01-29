@@ -1,24 +1,43 @@
-import { _querySelector, _add, _remove } from '../_config.js';
+import {
+  _querySelector,
+  _add,
+  _remove
+} from '../_config.js';
+import {
+  addClassItem,
+  removeClassItem
+} from './_toggleClassItem';
+import throttle from '../vendor/_throttle';
 
 let headerHeight = parseFloat(
   document.documentElement.style.getPropertyValue('--header-height')
 );
 
-const header = document.querySelector('.header');
-const first = document.querySelector('.main');
-const firstHeight = first.offsetHeight;
-let lastScrollTop = 0;
+let lastHeaderPosition;
+let newHeaderPosition;
 
-window.addEventListener('scroll', () => {
-  let scrollDistance = window.scrollY;
+const hideHeaderOnScroll = () => {
+  lastHeaderPosition = window.scrollY;
+  addClassItem('.header', 'scroll');
 
-  if (scrollDistance >= 15 + headerHeight) {
-  	header.classList.add('is-scroll');
-  	first.style.paddingTop = headerHeight + 'px';
-  } else {
-  	header.classList.remove('is-scroll');
-  	first.style.paddingTop = null;
+  if (
+    headerHeight - 50 < lastHeaderPosition &&
+    lastHeaderPosition > newHeaderPosition
+  ) {
+    addClassItem('.header', 'hide');
+    addClassItem('.header', 'scroll');
+  } else if (newHeaderPosition > lastHeaderPosition) {
+    removeClassItem('.header', 'hide');
   }
-  lastScrollTop = scrollDistance;
-});
 
+  if (lastHeaderPosition < headerHeight) removeClassItem('.header', 'scroll');
+
+  newHeaderPosition = lastHeaderPosition;
+};
+
+const throttleHideHeader = throttle(() => {
+  hideHeaderOnScroll();
+}, 250);
+
+window.addEventListener('scroll', throttleHideHeader);
+throttleHideHeader();

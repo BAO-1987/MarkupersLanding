@@ -1,5 +1,5 @@
-@use "../utils/functions" as *;
-@use "../utils/mixins" as *;
+@use '../utils/functions' as *;
+@use '../utils/mixins' as *;
 
 .btn {
   @include flex-all-center;
@@ -28,11 +28,11 @@
     position: relative;
     width: rem(27);
     height: rem(27);
-    mask-image: url("../images/icons/cursor.svg");
+    mask-image: url('../images/icons/cursor.svg');
   }
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     z-index: -1;
     background-color: #fff;
@@ -40,9 +40,7 @@
     border-radius: var(--radius-main);
     inset: 0;
     opacity: 0;
-    transition:
-      transform 0.5s linear,
-      opacity 0.5s linear;
+    transition: transform 0.5s linear, opacity 0.5s linear;
   }
 
   &:is(:hover, :active, :focus-visible) {
@@ -99,10 +97,9 @@
   @include flex-all-center;
 
   position: relative;
-  width:rem(70);
-  height: rem(70);
-  padding: rem(18);
-
+  width: rem(35);
+  height: rem(35);
+  gap: 1rem;
 
   &::before {
     @include mask;
@@ -114,7 +111,6 @@
   }
 
   &:hover:not(.swiper-button-disabled) {
-
     &::before {
       background-color: var(--color-orange);
     }

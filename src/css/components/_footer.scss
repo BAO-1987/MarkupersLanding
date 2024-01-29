@@ -1,22 +1,17 @@
-@use '../utils/functions/'as *;
-@use '../utils/mixins'as *;
+@use '../utils/functions/' as *;
+@use '../utils/mixins' as *;
 
 .footer {
   padding: clamp(2rem, vw(80), 5rem) 0;
   background-color: var(--color-brown);
 
   &__inner {
-    // @include flex-all-sb;
-    display: grid;
-    align-items: center;
-    justify-content: space-between;
-    grid-template-columns: repeat(3, auto);
-    gap: 1rem;
+    @include flex-all-sb;
+    gap: 2rem;
 
     @include media(mobile-l) {
       flex-direction: column;
     }
-
   }
 
   &__copyright {

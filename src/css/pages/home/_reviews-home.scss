@@ -60,6 +60,7 @@
 
     margin-top: auto;
     gap: clamp(1rem, vw(50), 3.125rem);
+
     @include media(mobile-l) {
       flex-direction: column;
     }
@@ -75,6 +76,10 @@
     img {
       width: rem(380);
       aspect-ratio: 2/0.92;
+
+      @include media(mobile-l) {
+        width: rem(280);
+      }
     }
   }
 

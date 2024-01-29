@@ -11,6 +11,27 @@
   letter-spacing: 0.034em;
   color: var(--color-white);
   background-color: var(--color-black);
+  scrollbar-color: var(--color-orange) var(--color-black);
+  scrollbar-width: thin;
+  scroll-snap-type: x mandatory;
+  scroll-snap-align: start;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-border-radius: rem(10);
+    border-radius: rem(10);
+    background-color: var(--color-black);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    -webkit-border-radius: rem(10);
+    border-radius: rem(10);
+    background-color: var(--color-orange);
+  }
 
   &__body {
     position: relative;
@@ -84,7 +105,6 @@
     position: relative;
   }
 
-
   &::after {
     mask-image: url('../images/icons/arrow.svg');
     width: 1rem;
@@ -113,10 +133,34 @@
   }
 }
 
-canvas {
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  z-index: -1;
-  height: var(--vh);
+.is-scrolling {
+  scrollbar-color: var(--color-orange) var(--color-white);
+  scrollbar-width: thin;
+  scroll-snap-type: x mandatory;
+  scroll-snap-align: start;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-border-radius: rem(10);
+    border-radius: rem(10);
+    background-color: var(--color-white);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    -webkit-border-radius: rem(10);
+    border-radius: rem(10);
+    background-color: var(--color-orange);
+  }
 }
+
+// canvas {
+//   position: absolute;
+//   width: 100%;
+//   height: 100vh;
+//   z-index: -1;
+//   height: var(--vh);
+// }
