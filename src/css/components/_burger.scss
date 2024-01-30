@@ -58,7 +58,7 @@
     opacity: 1;
   }
 
-  @include media(tablet) {
+  @include media(mobile-m) {
     display: block;
   }
 }
@@ -76,13 +76,13 @@
     }
   }
 
-  .nav {
-    translate: 0;
+  .nav__list {
+    transform: translateX(0);
   }
 }
 
 .closed.opened {
-  span {
+ .burger__line {
     background-color: var(--lines-color);
     transition: background-color 1s ease;
 

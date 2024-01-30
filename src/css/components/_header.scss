@@ -1,5 +1,5 @@
-@use '../utils/functions/'as *;
-@use '../utils/mixins'as *;
+@use '../utils/functions/' as *;
+@use '../utils/mixins' as *;
 
 .header {
   z-index: 99;
@@ -8,18 +8,18 @@
   padding: clamp(1.5rem, vw(50), 3.125rem) 0;
   width: 100%;
   background-color: var(--color-black);
-  transition: transform 0.3s;
+  transition: transform 0.55s, box-shadow 0.25s;
 
-  &__inner {
-    @include flex-all-sb;
-  }
+  // &__inner {
+  //   @include flex-all-sb;
+  // }
 
   &.scroll {
     box-shadow: 0 0 5px 0 var(--color-orange);
   }
 
   &.hide {
-    transform: translateY(-120%);
+    transform: translateY(-110%);
 
     &.opened {
       transform: translateY(0);
