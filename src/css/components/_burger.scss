@@ -1,0 +1,153 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins/"as*;
+
+.burger {
+  --line-height: 2px;
+  --burger-size: 25px;
+  --move: calc(var(--burger-size) / 3.5);
+  --move-decrement: calc(var(--move) * -1);
+  --transition-time: 0.5s;
+  --opacity: 1;
+  --lines-color: var(--color-white);
+
+  position: relative;
+  z-index: 5;
+  display: none;
+  margin-left: 20px;
+  width: var(--burger-size);
+  height: var(--burger-size);
+  background-color: transparent;
+  opacity: var(--opacity);
+  transition: opacity var(--transition-time) ease;
+
+  &__line {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: -1;
+    display: block;
+    width: var(--burger-size);
+    height: var(--line-height);
+    background-color: var(--lines-color);
+    transform: translateY(-50%);
+    transition: transform var(--transition-time) ease, background-color var(--transition-time) ease 0.15s;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: var(--burger-size);
+      height: var(--line-height);
+      background-color: var(--lines-color);
+      animation-duration: 0.6s;
+      animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+      animation-fill-mode: forwards;
+    }
+
+    &::before {
+      transform: translateY(var(--move-decrement)) rotate(0);
+    }
+
+    &::after {
+      transform: translateY(var(--move)) rotate(0);
+    }
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  @include media(tablet) {
+    display: block;
+  }
+}
+
+.opened {
+  .burger__line {
+    background-color: #0000;
+
+    &::before {
+      animation-name: toplinecross;
+    }
+
+    &::after {
+      animation-name: bottomlinecross;
+    }
+  }
+
+  .nav {
+    translate: 0;
+  }
+}
+
+.closed.opened {
+  span {
+    background-color: var(--lines-color);
+    transition: background-color 1s ease;
+
+    &::before {
+      animation-name: toplineburger;
+    }
+
+    &::after {
+      animation-name: bottomlineburger;
+    }
+  }
+}
+
+@keyframes toplinecross {
+  0% {
+    transform: translateY(var(--move-decrement));
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(0) rotate(45deg);
+  }
+}
+
+@keyframes bottomlinecross {
+  0% {
+    transform: translateY(var(--move));
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(0) rotate(-45deg);
+  }
+}
+
+@keyframes toplineburger {
+  0% {
+    transform: rotate(45deg);
+  }
+
+  50% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: translateY(var(--move-decrement)) rotate(0);
+  }
+}
+
+@keyframes bottomlineburger {
+  0% {
+    transform: translateY(0) rotate(-45deg);
+  }
+
+  50% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: translateY(var(--move)) rotate(0);
+  }
+}

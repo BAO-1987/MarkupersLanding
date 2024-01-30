@@ -1,11 +1,11 @@
-@use '../utils/functions/' as *;
-@use '../utils/mixins' as *;
+@use '../utils/functions/'as *;
+@use '../utils/mixins'as *;
 
 .header {
   z-index: 99;
   position: fixed;
   top: 0;
-  padding: rem(50) 0;
+  padding: clamp(1.5rem, vw(50), 3.125rem) 0;
   width: 100%;
   background-color: var(--color-black);
   transition: transform 0.3s;
@@ -15,10 +15,11 @@
   }
 
   &.scroll {
+    box-shadow: 0 0 5px 0 var(--color-orange);
   }
 
   &.hide {
-    transform: translateY(-110%);
+    transform: translateY(-120%);
 
     &.opened {
       transform: translateY(0);

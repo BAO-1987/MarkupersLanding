@@ -5,7 +5,7 @@
   @include flex;
   position: relative;
   flex-direction: column;
-  border: 1px solid var(--color-white);
+  // border: 1px solid var(--color-white);
   border-radius: var(--radius-big);
   padding: clamp(0.8rem, vw(25), 1.56rem);
   height: 100%;
