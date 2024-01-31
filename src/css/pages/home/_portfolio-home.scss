@@ -11,7 +11,7 @@
     align-items: flex-end;
 
     @include media(mobile-l) {
-      align-items: flex-start;
+      align-items: center;
     }
   }
 
