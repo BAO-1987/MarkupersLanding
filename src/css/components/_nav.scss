@@ -1,5 +1,5 @@
-@use '../utils/functions/'as *;
-@use '../utils/mixins'as *;
+@use '../utils/functions/' as *;
+@use '../utils/mixins' as *;
 
 .nav {
   @include flex-all-sb;
@@ -10,17 +10,17 @@
 
     @include media(mobile-m) {
       position: absolute;
-      left: 0;
       top: calc(var(--header-height));
+      left: 0;
       flex-direction: column;
-      padding-top: 2rem;
+      align-items: flex-end;
+      padding: 4rem 2rem 0;
       z-index: 99;
       height: (var(--vh));
       background-color: var(--color-black);
       width: 100%;
-      clip-path: circle(0 at top left);
+      clip-path: circle(0 at top right);
       transition: clip-path ease-in-out 0.9s;
-
 
       .nav__link {
         font-size: rem(22);
@@ -35,8 +35,7 @@
       @include media(mobile-m) {
         margin-bottom: 3.125rem;
         margin-right: 0;
-        animation: slide-up-slow 2s forwards,
-          fade-in 2s forwards;
+        animation: slide-up-slow 2s forwards, fade-in 2s forwards;
       }
     }
   }

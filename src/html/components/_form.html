@@ -2,14 +2,17 @@
 
      <div class="form__inner">
        <label class="form__label">
-         <input class="form__input js-validate" placeholder="Name" type="text" id="name" autocomplete="username"
-           inputmode="email" required>
-         <span class="error-massage"></span>
+         <input class="form__input js-validate" placeholder="Name" type="text" id="customer-first-name"
+           name="customerFirstName"
+           autocomplete="username"
+          required aria-describedby="customer-first-name-error" aria-invalid="false">
+         <span class="error" id="customer-first-name-error"></span>
        </label>
 
        <label class="form__label">
-         <input class="form__input js-validate" placeholder="Phone" type="tel" id="phone" autocomplete="tel"
-           inputmode="tel">
+         <input class="form__input js-validate" placeholder="Phone" type="tel" id="customer-phone" name="customerPhone"
+           autocomplete="tel"
+           inputmode="tel" required>
          <span class="error-massage"></span>
        </label>
 
