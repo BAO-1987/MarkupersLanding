@@ -29,10 +29,9 @@
 }
 
 @keyframes title-show {
-  0% {
-    opacity: 0;
-  }
-
+  // to {
+  //   clip-path: circle(200% at top right);
+  // }
   to {
     opacity: 1;
   }
@@ -81,50 +80,53 @@
 }
 
 @keyframes box-show {
-  0% {
-    width: 0;
-  }
+  //  to {
+  //   left: 100%;
+  // }
 
-  to {
+  0% {
+   width: 0;
+  }
+  100% {
     width: 100%;
   }
 }
 
 @keyframes title-before-hide {
   0% {
-    transform: translate(0);
+    translate: (0);
   }
 
   to {
-    transform: translate(calc(100% + 2px));
+    translate: (calc(100% + 2px));
   }
 }
 
-@keyframes text-hide {
-  0% {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
+// @keyframes text-hide {
+//   0% {
+//     opacity: 1;
+//     visibility: visible;
+//     transform: translateY(0);
+//   }
 
-  to {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(50%);
-  }
-}
+//   to {
+//     opacity: 0;
+//     visibility: hidden;
+//     transform: translateY(50%);
+//   }
+// }
 
-@keyframes btn-show {
-  0% {
-    -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-  }
+// @keyframes btn-show {
+//   0% {
+//     -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+//     clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+//   }
 
-  to {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
-}
+//   to {
+//     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+//     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+//   }
+// }
 
 @keyframes toplineburger {
   0% {

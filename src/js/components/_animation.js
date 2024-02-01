@@ -22,12 +22,12 @@ ScrollReveal().reveal(".delivery__image", {
   origin: "left",
 });
 
-ScrollReveal().reveal(".title", {
-  duration: 1200,
-  distance: "20px",
-  delay: "100",
-  origin: "top",
-});
+// ScrollReveal().reveal(".title", {
+//   duration: 1200,
+//   distance: "20px",
+//   delay: "100",
+//   origin: "top",
+// });
 
 
 
