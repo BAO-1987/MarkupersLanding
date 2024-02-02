@@ -4,12 +4,22 @@ ScrollReveal({
 });
 
 
-ScrollReveal().reveal(".hero__content, .delivery__content, .slider, .app__content,  .catalog__inner, .filter, .sort, .product-info, .tabs, .recent__content", {
+ScrollReveal().reveal(".text, .delivery__content, .slider, .app__content,  .catalog__inner, .filter, .sort, .product-info, .tabs, .recent__content", {
   duration: 1200,
   distance: "20px",
   delay: "100",
   origin: "top",
 });
+
+ScrollReveal().reveal(".services-home__list> li, .stages__list> li", {
+  duration: 500,
+  distance: "20px",
+  delay: "100",
+  origin: "top",
+  interval: 500,
+  opacity: 0,
+});
+
 
 ScrollReveal().reveal(".hero__image, .delivery__image, .app__image", {
   duration: 1000,

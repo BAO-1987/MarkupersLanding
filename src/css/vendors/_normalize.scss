@@ -199,3 +199,13 @@ summary {
 details>summary {
   list-style: none;
 }
+
+@supports not selector(:user-invalid) {
+  [data-js-enabled='false'] input:user-invalid {
+    /* Invalid input UI styles */
+  }
+
+  [data-js-enabled='false'] input:user-valid {
+    /* Valid input UI styles */
+  }
+}
