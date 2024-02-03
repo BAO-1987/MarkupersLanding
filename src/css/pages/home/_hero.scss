@@ -3,9 +3,9 @@
 
 .hero {
   position: relative;
-  isolation: isolate;
-  @include flex-all-sb;
-  // gap: 1rem;
+  @include flex-sb;
+  align-items: baseline;
+  gap: 1rem;
 
   &__content {
     display: grid;
@@ -29,7 +29,8 @@
 
     img {
       width: rem(595);
-      min-height: rem(418);
+      object-fit: contain;
+      aspect-ratio: 1.4/1;
     }
   }
 
@@ -38,5 +39,11 @@
     font-weight: var(--fw-900);
     font-size: clamp(2.1875rem, calc(0.75rem + 7.1875vw), 9.375rem);
     line-height: 1.17;
+  }
+
+  @include media(mobile-m) {
+    .lang {
+      display: none;
+    }
   }
 }
