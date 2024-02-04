@@ -1,107 +1,52 @@
+@use '../utils/functions/' as *;
+@use '../utils/mixins' as *;
+
 .modal {
   margin: auto;
   border: 0;
-  border-radius: var(--br);
-  padding: clamp(0.5rem, calc(2.0792vw + 0.5rem), 3rem);
-  width: min(90%, 486px);
-  font-size: rem-f(14);
-  text-align: center;
-  background-color: var(--color-white);
-
-  &--size {
-    width: min(90%, 870px);
-
-    .tabs {
-      @include flex-col;
-    }
-
-    .tabs__nav {
-      justify-content: center;
-    }
-
-    .tabs__panels {
-      align-self: center;
-    }
-
-    @include for-width(-mobile-md) {
-      width: 100%;
-      padding: 1rem;
-
-      .tabs__panels {
-        align-self: flex-start;
-      }
-    }
-  }
-
-  &--review {
-    &::before {
-      content: none;
-    }
-
-    .custom-select {
-      max-width: 100%;
-    }
-  }
-
+  border-radius: var(--radius-big);
+  padding: clamp(1rem, vw(50), rem(50)) clamp(2rem, vw(150), rem(150));
+  width: min(90%, 930px);
+  color: var(--color-white);
+  background-color: var(--color-brown);
 
   &::backdrop {
     background: rgba(30, 33, 44, 0.75);
   }
 
   &__title {
-    margin-bottom: clamp(0.8rem, calc(0.8rem + vw(16)), 1.5rem);
-    font-weight: 700;
-    font-size: clamp(1.13rem, calc(-0.08rem + 6.02vw), 1.75rem);
+    text-align: center;
   }
-
-  &__text {
-    margin-bottom: rem-f(24);
-    font-size: rem-f(14);
-    color: var(--color-gray-700);
-  }
-
-  &__link,
-  .modal__btn {
-    color: var(--color-green);
-  }
-
+  
   &__close {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    width: 16px;
-    height: 16px;
-  }
+    @include flex-all-center;
 
-  &__icon {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    fill: var(--color-gray-700);
-    transition: fill 0.3s linear;
+    position: absolute;
+    right: clamp(1rem, vw(50), rem(50));
+    top: clamp(1rem, vw(50), rem(50));
+    width: rem(25);
+    height: rem(25);
+
+    &::before {
+      @include mask;
+      mask-image: url('../images/icons/close.svg');
+      width: rem(25);
+      height: rem(25);
+      background-color: var(--color-white);
+    }
 
     &:hover {
-      fill: var(--color-green);
+      &::before {
+        background-color: var(--color-orange);
+      }
     }
   }
 
-  &__singup {
-    margin-bottom: rem-f(48);
-    text-align: left;
-  }
-
-  &__inner {
-    .tabs__nav {
-      justify-content: center;
-    }
-
-    .tabs__panel--active {
-      flex-direction: column;
-    }
+  .form__input {
+    color: var(--color-white);
   }
 
   &[open] {
-    animation: slide-up 0.6s forwards,
-      fade-in 0.6s forwards;
+    animation: slide-up 0.6s forwards, fade-in 0.6s forwards;
   }
 }

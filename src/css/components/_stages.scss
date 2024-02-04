@@ -27,8 +27,7 @@
           z-index: 5;
           left: auto;
           right: 0;
-          transform: translate(50%, -50%) !important;
-          transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1) !important;
+          transform: translate(50%, -50%);
           background-size: clamp(2rem, vw(70), 4.375rem);
         }
 
@@ -104,7 +103,7 @@
     &::after {
       content: "";
       position: absolute;
-      z-index: 5;
+      z-index: 5 !important;
       @include flex-all-center;
       top: 50%;
       left: 0;

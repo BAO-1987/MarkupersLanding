@@ -1,7 +1,7 @@
 const navigation = document.querySelector('.header');
 const page = document.querySelector('.page');
 
-navigation ? .addEventListener('click', onBurgerBtnClick);
+navigation ?.addEventListener('click', onBurgerBtnClick);
 
 function onBurgerBtnClick(e) {
   if (!e.target.parentNode.matches('.burger') && !e.target.matches('.burger')) {

@@ -44,6 +44,7 @@
     }
 
     &--textarea {
+      background-color: transparent;
       border: none;
       border-bottom: 1px solid var(--color-gray);
       resize: none;
@@ -65,10 +66,10 @@
   }
 
   &__btn {
-    border-color: var(--color-gray-100);
+    border-color: var(--color-gray);
     width: 100%;
     max-width: 100%;
-    color: var(--color-gray-100);
+    color: var(--color-gray);
 
     &::before {
       content: none;

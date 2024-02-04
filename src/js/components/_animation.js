@@ -11,14 +11,15 @@ ScrollReveal().reveal(".text, .portfolio-home, .reviews-home, .contacts-home", {
   origin: "top",
 });
 
-ScrollReveal().reveal(".services-home__list> li, .stages__list> li, .faq__list> li", {
+ScrollReveal().reveal(".stages__list> li, .faq__list> li", {
   duration: 500,
   distance: "20px",
   delay: "100",
   origin: "top",
   interval: 500,
-  opacity: 0,
 });
+
+
 
 
 // ScrollReveal().reveal(".hero__image, .delivery__image, .app__image", {
@@ -47,4 +48,8 @@ ScrollReveal().reveal(".services-home__list> li, .stages__list> li, .faq__list> 
 //   delay: "100",
 //   origin: "top",
 // });
+
+
+
+
 
