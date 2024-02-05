@@ -26,8 +26,8 @@
         &::after {
           z-index: 5;
           left: auto;
-          right: 0;
-          transform: translate(50%, -50%);
+          right: -64px;
+          // transform: translate(50%, -50%);
           background-size: clamp(2rem, vw(70), 4.375rem);
         }
 
@@ -103,11 +103,12 @@
     &::after {
       content: "";
       position: absolute;
-      z-index: 5 !important;
+      z-index: 5;
       @include flex-all-center;
       top: 50%;
       left: 0;
-      transform: translate(-50%, -50%);
+      // left: -64px;
+      transform: translate(-65%, -50%);
       width: clamp(3.75rem, vw(120), 7.5rem);
       aspect-ratio: 1/1;
       border-radius: var(--radius-round);
@@ -116,6 +117,12 @@
       background-repeat: no-repeat;
       background-size: clamp(2rem, vw(50), 3.125rem);
       background-position: center;
+    }
+
+    &:first-child {
+      &::after {
+        transform: translate(-50%, -50%);
+      }
     }
 
     &--ds {

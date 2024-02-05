@@ -1,11 +1,14 @@
 import Swiper, {
-  Navigation
+  Navigation,
+  Parallax
 } from 'swiper';
 
-const sliderOptions = {
+const reviewsSlider = new Swiper('.reviews-slider', {
   slidesPerView: 1,
-  modules: [Navigation],
+  parallax: true,
+  modules: [Parallax, Navigation],
   spaceBetween: 30,
+  speed: 600,
   draggable: true,
   grabCursor: true,
 
@@ -13,6 +16,4 @@ const sliderOptions = {
     nextEl: ".reviews-slider__next",
     prevEl: ".reviews-slider__prev",
   },
-};
-
-const reviewsSlider = new Swiper('.reviews-slider', sliderOptions);
+});

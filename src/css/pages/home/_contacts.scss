@@ -1,7 +1,7 @@
-@use '../../utils/functions'as *;
-@use '../../utils/mixins'as *;
+@use "../../utils/functions" as *;
+@use "../../utils/mixins" as *;
 
-.contacts-home {
+.contacts {
   &__inner {
     display: grid;
     grid-template-columns: repeat(2, auto);
@@ -30,9 +30,7 @@
     background-color: var(--color-brown);
     gap: 1rem;
   }
-}
 
-.contact {
   &__follow {
     .social {
       flex-direction: row;
@@ -56,6 +54,7 @@
 
   &__item {
     @include flex;
+
     flex-direction: column;
     white-space: nowrap;
     gap: rem(10);
@@ -63,38 +62,47 @@
 
   &__name {
     @include flex;
+
     position: relative;
     font-size: rem(15);
     gap: rem(15);
 
     &::before {
       @include mask;
+
       position: relative;
-      mask-image: url('../images/icons/email.svg');
+      mask-image: url("../images/icons/email.svg");
       width: rem(24);
       height: rem(24);
     }
 
     &--email {
       &::before {
-        mask-image: url('../images/icons/email.svg');
+        mask-image: url("../images/icons/email.svg");
       }
     }
 
     &--phone {
       &::before {
-        mask-image: url('../images/icons/phone.svg');
+        mask-image: url("../images/icons/phone.svg");
       }
     }
 
     &--schedule {
       &::before {
-        mask-image: url('../images/icons/schedule.svg');
+        mask-image: url("../images/icons/schedule.svg");
       }
     }
   }
 
   &__link {
     font-size: clamp(1rem, calc(0.975rem + 0.125vw), 1.125rem);
+    transition: color 0.4s linear;
+
+    &:not(span) {
+      &:hover {
+        color: var(--color-orange);
+      }
+    }
   }
 }

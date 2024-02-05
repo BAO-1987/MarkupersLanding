@@ -1,5 +1,5 @@
-@use '../../utils/functions' as *;
-@use '../../utils/mixins' as *;
+@use "../../utils/functions" as *;
+@use "../../utils/mixins" as *;
 
 .faq {
   &__list {
@@ -38,7 +38,7 @@
     gap: rem(30);
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       inset: 0;
     }
@@ -53,7 +53,9 @@
     padding: clamp(1rem, vw(31), 1.94rem) clamp(1rem, vw(60), 3.75rem);
     color: var(--color-ebony);
     background-color: var(--color-white);
-    animation: slide-up-slow 2s forwards, fade-in 2s forwards;
+    animation:
+      slide-up-slow 2s forwards,
+      fade-in 2s forwards;
 
     > div {
       @include flex;

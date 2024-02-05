@@ -10,10 +10,6 @@
   background-color: var(--color-black);
   transition: transform 0.55s, box-shadow 0.25s;
 
-  // &__inner {
-  //   @include flex-all-sb;
-  // }
-
   &.scroll {
     box-shadow: 0 0 5px 0 var(--color-orange);
   }

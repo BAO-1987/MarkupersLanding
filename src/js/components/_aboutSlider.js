@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   resizableSwiper(
     '(max-width: 575px)',
-    '.about-home__slider', {
+    '.about__slider', {
       loop: true,
       spaceBetween: 20,
       grabCursor: true,

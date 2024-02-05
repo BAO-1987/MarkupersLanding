@@ -8,3 +8,4 @@ import './components/_formValidate';
 import './components/_animation';
 import './components/_modal';
 import './components/_titleAnimation';
+import './components/_scroll';

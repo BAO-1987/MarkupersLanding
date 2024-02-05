@@ -1,7 +1,7 @@
 @use '../../utils/functions' as *;
 @use '../../utils/mixins' as *;
 
-.reviews-home {
+.reviews {
   &__content {
     @include flex-sb;
     margin-bottom: rem(50);

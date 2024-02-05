@@ -1,13 +1,15 @@
 import Swiper, {
-  Autoplay,
-  Pagination,
-  Navigation,
+  Parallax,
+  Navigation
 } from 'swiper';
 
-const sliderOptions = {
+
+const portfolioSlider = new Swiper('.portfolio-slider', {
   slidesPerView: 1,
-  modules: [Autoplay, Pagination, Navigation],
+  parallax: true,
+  modules: [Parallax, Navigation],
   spaceBetween: 30,
+  speed: 600,
   draggable: true,
   grabCursor: true,
 
@@ -16,6 +18,4 @@ const sliderOptions = {
     prevEl: ".portfolio-slider__prev",
   },
 
-};
-
-const portfolioSlider = new Swiper('.portfolio-slider', sliderOptions);
+});

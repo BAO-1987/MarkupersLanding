@@ -3,6 +3,13 @@ const page = document.querySelector('.page');
 
 navigation ?.addEventListener('click', onBurgerBtnClick);
 
+const links = document.querySelectorAll('.nav__link');
+links.forEach(link => {
+  link.addEventListener('click', () => {
+    closeBurger();
+  });
+});
+
 function onBurgerBtnClick(e) {
   if (!e.target.parentNode.matches('.burger') && !e.target.matches('.burger')) {
     return;
@@ -22,4 +29,10 @@ function onBurgerBtnClick(e) {
   }
 
   this.classList.add('opened');
+}
+
+function closeBurger() {
+  navigation.classList.remove('opened');
+  navigation.classList.add('closed');
+  page.classList.remove('open');
 }

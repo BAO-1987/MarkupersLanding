@@ -32,14 +32,14 @@
     gap: rem(15);
 
 
-    a {
-      &::before {
-        content: '';
-        position: absolute;
-        z-index: 2;
-        inset: 0;
-      }
-    }
+    // a {
+    //   &::before {
+    //     content: '';
+    //     position: absolute;
+    //     z-index: 2;
+    //     inset: 0;
+    //   }
+    // }
 
     h3 {
       margin: 0;
