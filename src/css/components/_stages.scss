@@ -23,11 +23,11 @@
       .stages__item {
         padding-bottom: clamp(2rem, vw(50), 3.12rem);
 
-        &::after {
-          z-index: 5;
+        &::before {
+          z-index: 5 !important;
           left: auto;
-          right: -64px;
-          // transform: translate(50%, -50%);
+          right: 0;
+          transform: translate(50%, -50%);
           background-size: clamp(2rem, vw(70), 4.375rem);
         }
 
@@ -64,7 +64,7 @@
       clamp(2.2rem, vw(78), 4.88rem);
     border-radius: var(--radius-big);
     background-color: var(--color-brown);
-    z-index: -1;
+    z-index: -2 !important;
 
     h3 {
       padding-top: rem(10);
@@ -83,7 +83,7 @@
       margin-top: auto;
     }
 
-    &::before {
+    &::after {
       top: calc(clamp(3rem, vw(59), 3.7rem) * -1);
       left: rem(60);
       counter-increment: li;
@@ -100,14 +100,13 @@
       -webkit-text-fill-color: transparent;
     }
 
-    &::after {
+    &::before {
       content: "";
       position: absolute;
       z-index: 5;
       @include flex-all-center;
       top: 50%;
       left: 0;
-      // left: -64px;
       transform: translate(-65%, -50%);
       width: clamp(3.75rem, vw(120), 7.5rem);
       aspect-ratio: 1/1;
@@ -119,44 +118,38 @@
       background-position: center;
     }
 
-    &:first-child {
-      &::after {
-        transform: translate(-50%, -50%);
-      }
-    }
-
     &--ds {
-      &::after {
+      &::before {
         background-image: url("../images/icons/design.svg");
       }
     }
 
     &--cd {
-      &::after {
+      &::before {
         background-image: url("../images/icons/css.svg");
       }
     }
 
     &--ts {
-      &::after {
+      &::before {
         background-image: url("../images/icons/testing.svg");
       }
     }
 
     &--sol {
-      &::after {
+      &::before {
         background-image: url("../images/icons/money.svg");
       }
     }
 
     &--save {
-      &::after {
+      &::before {
         background-image: url("../images/icons/hand-money.svg");
       }
     }
 
     &--discount {
-      &::after {
+      &::before {
         background-image: url("../images/icons/making-money.svg");
       }
     }

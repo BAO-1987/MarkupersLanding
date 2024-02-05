@@ -5,18 +5,23 @@
   &__inner {
     display: grid;
     grid-template-columns: repeat(2, auto);
-    border-radius: var(--radius-big);
 
     @include media(mobile-l) {
       grid-template-columns: repeat(1, 1fr);
       grid-template-rows: repeat(1, 1fr);
+      gap: 1rem;
     }
   }
 
   &__desc {
+    border-radius: var(--radius-big) 0 0 var(--radius-big);
     padding: clamp(1.2rem, vw(100), 6.25rem);
     color: var(--color-black);
     background-color: var(--color-white);
+
+    @include media(mobile-l) {
+      border-radius: var(--radius-big);
+    }
   }
 
   &__text {
@@ -26,9 +31,14 @@
   &__info {
     @include flex-sb;
     flex-direction: column;
+    border-radius: 0 var(--radius-big) var(--radius-big) 0;
     padding: clamp(1.2rem, vw(100), 6.25rem);
     background-color: var(--color-brown);
     gap: 1rem;
+
+    @include media(mobile-l) {
+      border-radius: var(--radius-big);
+    }
   }
 
   &__follow {
