@@ -1,11 +1,179 @@
-@use '../../utils/functions'as *;
-@use '../../utils/mixins'as *;
+@use "../../utils/functions" as *;
+@use "../../utils/mixins" as *;
 
 .stages {
   &__text {
     margin-bottom: clamp(3.5rem, vw(109), 6.875rem);
     width: 100%;
     max-width: rem(690);
+  }
 
+  &__list {
+    --item: 240px;
+
+    counter-reset: li;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--item), 1fr));
+    margin-bottom: clamp(1.5rem, vw(50), 3.12rem);
+    padding-left: clamp(2.5rem, vw(60), 3.75rem);
+    gap: 2.81rem clamp(2rem, vw(45), 2.81rem);
+
+    @include media(mobile-m) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+
+    &--advantages {
+      --item: 250px;
+      padding: 0 clamp(2.5rem, vw(60), 3.75rem) 0 0;
+
+      .stages__item {
+        padding-bottom: clamp(2rem, vw(50), 3.12rem);
+
+        &::before {
+          left: auto;
+          right: 0;
+          transform: translate(50%, -50%);
+          background-size: clamp(2rem, vw(70), 4.375rem);
+        }
+
+        p {
+          padding-top: rem(12);
+          font-weight: var(--fw-700);
+          font-size: clamp(1rem, calc(0.975rem + 0.125vw), 1.125rem);
+        }
+
+        &:last-child {
+          @include media(tablet) {
+            max-width: rem(400);
+            margin: 0 auto;
+            grid-column: 2 span;
+          }
+
+          @include media(mobile-m) {
+            grid-column: auto;
+            max-width: 100%;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &__item {
+    @include flex;
+
+    position: relative;
+    z-index: -2 !important;
+    flex-direction: column;
+    border-radius: var(--radius-big);
+    padding: clamp(1rem, vw(70), 4.35rem) clamp(1rem, vw(78), 4.88rem) clamp(1rem, vw(30), 1.875rem)
+      clamp(2.2rem, vw(78), 4.88rem);
+    height: 100%;
+    background-color: var(--color-brown);
+    gap: rem(20);
+
+    &::before {
+      @include flex-all-center;
+
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      z-index: 5;
+      border: clamp(0.2rem, vw(8), 0.5rem) solid var(--color-brown);
+      border-radius: var(--radius-round);
+      width: clamp(3.75rem, vw(120), 7.5rem);
+      background-position: center;
+      background-size: clamp(2rem, vw(50), 3.125rem);
+      background-repeat: no-repeat;
+      background-color: var(--color-white);
+      transform: translate(-65%, -50%);
+      aspect-ratio: 1/1;
+    }
+
+    &::after {
+      counter-increment: li;
+      content: counter(li, decimal-leading-zero);
+      position: absolute;
+      left: rem(60);
+      top: calc(clamp(3rem, vw(59), 3.7rem) * -1);
+      font-weight: var(--fw-700);
+      font-size: clamp(5rem, 4.75rem + 1.25vw, 6.25rem);
+      line-height: 1.17;
+      letter-spacing: 0.03em;
+      background-image: linear-gradient(180deg, #fff 50%, rgb(144, 127, 83) 50%);
+      -webkit-text-stroke-width: 0.006em;
+      -webkit-text-stroke-color: inherit;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    h3 {
+      padding-top: rem(10);
+      font-weight: var(--fw-700);
+      font-size: rem(30);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: rem(15);
+      line-height: 1.5;
+      letter-spacing: 0.028em;
+    }
+
+    span:not([class]) {
+      margin-top: auto;
+    }
+
+    &--ds {
+      &::before {
+        background-image: url("../images/icons/design.svg");
+      }
+    }
+
+    &--cd {
+      &::before {
+        background-image: url("../images/icons/css.svg");
+      }
+    }
+
+    &--ts {
+      &::before {
+        background-image: url("../images/icons/testing.svg");
+      }
+    }
+
+    &--sol {
+      &::before {
+        background-image: url("../images/icons/money.svg");
+      }
+    }
+
+    &--save {
+      &::before {
+        background-image: url("../images/icons/hand-money.svg");
+      }
+    }
+
+    &--discount {
+      &::before {
+        background-image: url("../images/icons/making-money.svg");
+      }
+    }
+
+    &:last-child {
+      @include media(tablet) {
+        max-width: rem(400);
+        margin: 0 auto;
+        grid-column: 2 span;
+      }
+
+      @include media(mobile-m) {
+        grid-column: auto;
+        max-width: 100%;
+        margin: 0;
+      }
+    }
   }
 }

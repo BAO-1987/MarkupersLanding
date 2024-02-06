@@ -4,14 +4,14 @@ ScrollReveal({
 });
 
 
-ScrollReveal().reveal(".text, .portfolio-home, .reviews-home, .contacts-home", {
+ScrollReveal().reveal(".text, .portfolio, .reviews, .contacts, .stages__list", {
   duration: 1200,
   distance: "20px",
   delay: "100",
   origin: "top",
 });
 
-ScrollReveal().reveal(".stages__list> li, .faq__list> li", {
+ScrollReveal().reveal(".faq__list> li", {
   duration: 500,
   distance: "20px",
   delay: "100",
