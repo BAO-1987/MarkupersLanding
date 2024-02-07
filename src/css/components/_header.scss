@@ -8,17 +8,17 @@
   padding: clamp(1.5rem, vw(50), 3.125rem) 0;
   width: 100%;
   background-color: var(--color-black);
-  transition: transform 0.55s, box-shadow 0.25s;
+  transition: transform 0.3s, box-shadow 0.25s;
 
   &.scroll {
     box-shadow: 0 0 5px 0 var(--color-orange);
   }
 
   &.hide {
-    transform: translateY(-110%);
+    transform: translateY(-110%) !important;
 
     &.opened {
-      transform: translateY(0);
+      transform: translateY(0) !important;
     }
   }
 }
