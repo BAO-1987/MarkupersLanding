@@ -1,38 +1,32 @@
-@use '../../utils/functions'as *;
-@use '../../utils/mixins'as *;
+@use "../../utils/functions" as *;
+@use "../../utils/mixins" as *;
 
 .hero {
+  margin-top: calc((var(--header-height) + 60px) * -1);
+  margin-bottom: rem(20);
+  display: flex;
+  align-items: center;
   position: relative;
-  @include flex-sb;
-  align-items: baseline;
-  gap: 1rem;
+  height: var(--vh);
+  isolation: isolate;
 
-  &__content {
-    display: grid;
-    grid-template-areas: 'hero';
-    width: 100%;
-
-    >* {
-      grid-area: hero;
-    }
+  &__inner {
+    z-index: 1;
+    @include flex-sb;
+    align-items: baseline;
+    gap: 1rem;
   }
 
-  &__desc {
-    z-index: 1;
-    justify-self: center;
+  &__content {
     width: 100%;
     max-width: rem(910);
   }
 
-  &__image {
-    justify-self: end;
-
-    img {
-      width: rem(595);
-      object-fit: contain;
-      aspect-ratio: 1.4/1;
-    }
-  }
+  // &__desc {
+  //   z-index: 1;
+  //   width: 100%;
+  //   max-width: rem(910);
+  // }
 
   &__title {
     margin-bottom: clamp(2rem, vw(100), 6.25rem);

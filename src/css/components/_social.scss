@@ -1,12 +1,11 @@
-@use '../utils/functions/' as *;
-@use '../utils/mixins' as *;
+@use "../utils/functions/" as *;
+@use "../utils/mixins" as *;
 
 .social {
   @include flex;
-  padding-top: 5px;
-  gap: clamp(1rem, vw(30), 1.88rem);
+  
   flex-direction: column;
-  align-self: flex-start;
+  gap: clamp(1rem, vw(30), 1.88rem);
 
   &__link {
     @include flex-all-center;
@@ -21,7 +20,7 @@
     &::before {
       @include mask;
 
-      mask-image: url('../images/icons/fb.svg');
+      mask-image: url("../images/icons/fb.svg");
       width: rem(20);
       height: rem(20);
       background-color: var(--color-gray-100);
@@ -37,31 +36,31 @@
 
     &--fb {
       &::before {
-        mask-image: url('../images/icons/fb.svg');
+        mask-image: url("../images/icons/fb.svg");
       }
     }
 
     &--ln {
       &::before {
-        mask-image: url('../images/icons/ln.svg');
+        mask-image: url("../images/icons/ln.svg");
       }
     }
 
     &--in {
       &::before {
-        mask-image: url('../images/icons/in.svg');
+        mask-image: url("../images/icons/in.svg");
       }
     }
 
     &--yt {
       &::before {
-        mask-image: url('../images/icons/yt.svg');
+        mask-image: url("../images/icons/yt.svg");
       }
     }
 
     &--be {
       &::before {
-        mask-image: url('../images/icons/be.svg');
+        mask-image: url("../images/icons/be.svg");
       }
     }
   }

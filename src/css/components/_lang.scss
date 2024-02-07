@@ -1,8 +1,10 @@
-@use '../utils/functions/' as *;
-@use '../utils/mixins' as *;
+@use "../utils/functions/" as *;
+@use "../utils/mixins" as *;
 
 .lang {
   @include flex-v-center;
+
+  z-index: 1;
   flex-direction: column;
   gap: 0.94rem;
 
